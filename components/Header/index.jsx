@@ -1,10 +1,11 @@
 import React from "react";
 import Link from "next/link";
+import Profile from "@/components/images/unenbat.png";
 import { motion } from "framer-motion";
 
 const Header = () => {
   return (
-    <header className="bg-slate-800">
+    <header className="bg-slate-800 h-9">
       <div className="flex justify-around">
         <motion.div
           initial={{ x: -100, opacity: 0, scale: 0 }}
@@ -12,7 +13,7 @@ const Header = () => {
           transition={{ duration: 1.5 }}
           className="text-3xl text-purple-500 items-center"
         >
-          LOGO
+          <img src={Profile} alt="Porfile" />
         </motion.div>
         <motion.div
           initial={{ x: 500, opacity: 0, scale: 0 }}
@@ -21,13 +22,13 @@ const Header = () => {
           className="flex items-center justify-between "
         >
           <Link className="ml-3" href="/">
-            Нүүр
+            Profile
           </Link>
           <Link className="ml-3" href="/about">
-            Миний тухай
+            About
           </Link>
           <Link className="ml-3" href="/contact">
-            Холбоо барих
+            Contact
           </Link>
         </motion.div>
       </div>

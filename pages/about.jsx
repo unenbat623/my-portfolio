@@ -1,8 +1,15 @@
 import React from "react";
 import Layout from "@/components/Layout";
+import Ring from "@/components/text";
 
 const About = () => {
-  return <div className="w-full h-full bg-orange-400">About</div>;
+  return (
+    <Layout>
+      <Ring />
+
+      <div className="w-full h-full bg">About</div>
+    </Layout>
+  );
 };
 
 export default About;

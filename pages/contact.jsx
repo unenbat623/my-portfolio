@@ -1,8 +1,14 @@
 import React from "react";
 import Layout from "@/components/Layout";
+import Ring from "@/components/text";
 
 const Contact = () => {
-  return <div className="w-full h-full bg-red-400">Contact</div>;
+  return (
+    <Layout name="contact">
+      <Ring />
+      <div className="w-full h-full bg">Contact</div>
+    </Layout>
+  );
 };
 
 export default Contact;
