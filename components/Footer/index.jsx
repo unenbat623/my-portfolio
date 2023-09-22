@@ -1,15 +1,16 @@
 import React from "react";
-import styles from "./style.module.css";
-import style from "@/components/Footer/";
+import { images } from "@/next.config";
+import Layout from "../../Layout";
 function Footer() {
   return (
+    <Layout>
     <footer>
       <div className="container">
         <h3>
           <img
-            src="https://www.pngmart.com/files/13/Supernatural-Logo-PNG-Transparent-Image.png"
-            width={300}
-            height={160}
+            src="unenbat.png"
+            width={250}
+            height={140}
           />
         </h3>
         <ul className="contents">
@@ -89,6 +90,7 @@ function Footer() {
         </div>
       </div>
     </footer>
+    </Layout>
   );
 }
 export default Footer;
