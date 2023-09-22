@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const Header = () => {
   return (
-    <header className="bg-gray-800 text-slate-50 h-16">
+    <header className="bg-gray-800 text-slate-50 h-18">
       <div className="flex justify-around">
         <motion.div
           initial={{ x: -100, opacity: 0, scale: 0 }}
@@ -13,11 +13,7 @@ const Header = () => {
           transition={{ duration: 1.5 }}
           className="text-3xl text-slate-50 items-center"
         >
-          <img
-            src="unenbat.png"
-            width={65}
-            height={180}
-          />
+          <img src="unenbat.png" width={65} height={180} />
         </motion.div>
         <motion.div
           initial={{ x: 500, opacity: 0, scale: 0 }}

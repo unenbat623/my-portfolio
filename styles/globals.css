@@ -109,7 +109,7 @@ p {
   font-size: 15px;
 }
 footer {
-  background-color: gray;
+  background-color: rgb(31 41 55);
   padding: 50px 20px;
 }
 footer .container {
@@ -159,7 +159,7 @@ input {
   font-size: 15px;
 }
 .bttn input {
-  background: darkred;
+  background-color: rgb(126 34 206);
   color: #ffffff;
   transition: 0.3s ease;
 }

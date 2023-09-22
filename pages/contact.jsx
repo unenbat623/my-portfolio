@@ -1,11 +1,16 @@
 import React from "react";
 import Layout from "@/Layout";
-import Ring from "@/components/text";
+import { images } from "@/next.config";
 
 const Contact = () => {
   return (
     <Layout name="contact">
-      <div className="w-full h-full bg">Contact</div>
+      <section className="w-full h-full flex py-32 relative">
+        <div>Холбоо барих</div>
+        <div>
+          <img src="unenbat.png" />
+        </div>
+      </section>
     </Layout>
   );
 };
