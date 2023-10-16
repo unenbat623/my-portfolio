@@ -4,7 +4,7 @@ import Layout from "../../Layout";
 function Footer() {
   return (
     <Layout>
-      <footer>
+      <footer className="">
         <div className="container">
           <h3>
             <img src="unenbat.png" width={200} height={120} />
