@@ -5,9 +5,10 @@ import { AnimatePresence } from "framer-motion";
 
 export default function App({ Component, pageProps }) {
   return (
-    <div className=" text-gray h-screen">
-      <div className="w-full h-[calc(100%-76px)]">
+    <div className=" text-gray">
+      <div className="w-full h-full">
         <animateMotion mode="wait">
+          <Header />
           <Component {...pageProps} />
         </animateMotion>
         <Footer />
