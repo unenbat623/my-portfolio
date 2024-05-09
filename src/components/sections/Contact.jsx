@@ -94,7 +94,7 @@ const ContactButton = styled.input`
   width: 100%;
   text-decoration: none;
   text-align: center;
-  background: hsla(271, 100%, 50%, 1);
+  background: #ff2400;
   padding: 13px 16px;
   margin-top: 2px;
   border-radius: 12px;
@@ -134,7 +134,7 @@ const Contact = () => {
             marginBottom: "40px",
           }}
         >
-          Feel free to reach out to me for any questions or opportunities!
+          🚀 Feel free to reach out to me for any questions or opportunities! 🚀
         </Desc>
         <ContactForm onSubmit={handelSubmit}>
           <ContactTitle>Email Me 🚀</ContactTitle>

@@ -110,10 +110,6 @@ const SkillItem = styled.div`
     padding: 6px 12px;
   }
 `;
-const SkillImage = styled.img`
-  width: 24px;
-  height: 24px;
-`;
 
 const Skills = () => {
   return (
@@ -126,7 +122,7 @@ const Skills = () => {
           }}
         >
           Here are some of my skills on which I have been working on for the
-          past 3 years.
+          past 1 years.
         </Desc>
 
         <SkillsContainer>
@@ -137,7 +133,11 @@ const Skills = () => {
                 <SkillList>
                   {skill.skills.map((item, index_x) => (
                     <SkillItem key={`skill-x-${index_x}`}>
-                      <SkillImage src={item.image} />
+                      <img
+                        alt=""
+                        style={{ width: "24px", height: "24px" }}
+                        src={item.image}
+                      />
                       {item.name}
                     </SkillItem>
                   ))}
