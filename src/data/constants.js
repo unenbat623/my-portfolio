@@ -41,9 +41,14 @@ export const skills = [
           "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/800px-JavaScript-logo.png",
       },
       {
-        name: "Bootstrap",
+        name: "Typescript",
         image:
-          "https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png",
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png",
+      },
+      {
+        name: "Tailwindcss",
+        image:
+          "https://logowik.com/content/uploads/images/tailwind-css3232.logowik.com.webp",
       },
       {
         name: "Material UI",
@@ -154,38 +159,65 @@ export const education = [
 ];
 
 export const projects = [
-  // {
-  //   id: 0,
-  //   title: "Brain Tumor Detection",
-  //   date: "Jan 2023 - Mar 2023",
-  //   description:
-  //     "Preprocessed and augmented the dataset to improve model accuracy, trained the model, created API using model and Python, and used React web app for the project's front end. Achievements: Achieved an accuracy of 99.2% to accurately detect brain tumors from medical images.",
-  //   image:
-  //     "https://github.com/rishavchanda/Brain-Tumor-Detection/raw/main/Readme_resource/Image2.png",
-  //   tags: ["Python", "Keras", "TensorFlow", "VGG16", "Pickle", "React"],
-  //   category: "machine learning",
-  //   github: "https://github.com/rishavchanda/Brain-Tumor-Detection",
-  //   webapp: "https://brain-tumor.netlify.app/",
-  //   member: [
-  //     {
-  //       name: "B.unenbat",
-  //       img: "https://scontent.fuln2-2.fna.fbcdn.net/v/t39.30808-6/415590667_333489336309354_4681630647101831769_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=5f2048&_nc_ohc=YGzvt1HiDOkQ7kNvgFQWPFC&_nc_ht=scontent.fuln2-2.fna&oh=00_AfDB0dNACIAQ4iNWmAXsu5on2Pt7ikFtW-1mgPUSVniRqw&oe=66412742",
-  //       linkedin: "https://www.linkedin.com/in/rishav-chanda-b89a791b3/",
-  //       github: "https://github.com/rishavchanda/",
-  //     },
-  //   ],
-  // },
-  // {
-  //   id: 1,
-  //   title: "Todo Web App",
-  //   date: "Jun 2021",
-  //   description:
-  //     " A Todo Web App made with React JS, Redux, and Material UI. It has a login page where users can log in with their Google account. It has a sidebar where users can see all the tasks and can create a new task. It has a calendar where users can see all the tasks on a particular date.",
-  //   image:
-  //     "https://camo.githubusercontent.com/84ac6ab6f378348ef28d8184062b7e9e3511a1252ae3966eaa49e8e998f732a7/68747470733a2f2f666972656261736573746f726167652e676f6f676c65617069732e636f6d2f76302f622f746f646f2d6170702d63386331392e61707073706f742e636f6d2f6f2f53637265656e73686f74253230283938292e706e673f616c743d6d6564696126746f6b656e3d33643335646366322d626666322d343730382d393031632d343232383866383332386633",
-  //   tags: ["React Js", "Local Storage", "AWS Auth", "Node JS"],
-  //   category: "web app",
-  //   github: "https://github.com/rishavchanda/Todo-Web-App",
-  //   webapp: "https://rishav-react-todo.netlify.app/",
-  // },
+  {
+    id: 0,
+    title: "Graphql TODO",
+    date: "Jan 2024 - Mar 2024",
+    description:
+      "Preprocessed and augmented the dataset to improve model accuracy, trained the model, created API using model and Typescript, and used React web app for the project's frontend and backend. Achievements: Achieved an accuracy of 95.7% to accurately detect brain tumors from medical images.",
+    image:
+      "https://github.com/unenbat623/Brain-Tumor-Detection/raw/main/Readme_resource/Image2.png",
+    tags: ["typescript", "Graphql", "React"],
+    category: "machine learning",
+    github: "https://github.com/unenbat623/",
+    webapp: "https://brain-tumor.netlify.app/",
+    member: [
+      {
+        name: "B.unenbat",
+        img: "https://scontent.fuln2-2.fna.fbcdn.net/v/t39.30808-6/415590667_333489336309354_4681630647101831769_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=5f2048&_nc_ohc=YGzvt1HiDOkQ7kNvgFQWPFC&_nc_ht=scontent.fuln2-2.fna&oh=00_AfDB0dNACIAQ4iNWmAXsu5on2Pt7ikFtW-1mgPUSVniRqw&oe=66412742",
+        linkedin: "https://www.linkedin.com/in/b-unenbat-7a4b7823b/",
+        github: "https://github.com/unenbat623/",
+      },
+    ],
+  },
+  {
+    id: 1,
+    title: "Central Cinema website",
+    date: "Jun 2021",
+    description:
+      " A Central Cinema website made with React JS, Headless UI and Material UI. It has a login page where users can log in with their Google account. It has a sidebar where users can see all the tasks and can create a new task.Build responsive It has a calendar where users can see all the tasks on a particular date.",
+    image:
+      "https://camo.githubusercontent.com/84ac6ab6f378348ef28d8184062b7e9e3511a1252ae3966eaa49e8e998f732a7/68747470733a2f2f666972656261736573746f726167652e676f6f676c65617069732e636f6d2f76302f622f746f646f2d6170702d63386331392e61707073706f742e636f6d2f6f2f53637265656e73686f74253230283938292e706e673f616c743d6d6564696126746f6b656e3d33643335646366322d626666322d343730382d393031632d343232383866383332386633",
+    tags: ["React Js", "Typescript", "Node JS"],
+    category: "web site, web app",
+    github: "https://github.com/unenbat623/Todo-Web-App",
+    webapp: "https://rishav-react-todo.netlify.app/",
+  },
+  {
+    id: 2,
+    title: "Food_Delvivery",
+    date: "Jun 2024-",
+    description:
+      " A Food_Delvivery Web App made with React JS, and Material UI. It has a login page where users can log in with their Google account. It has a sidebar where users can see all the tasks and can create a new task. It has a calendar where users can see all the tasks on a particular date.",
+    image:
+      "https://camo.githubusercontent.com/84ac6ab6f378348ef28d8184062b7e9e3511a1252ae3966eaa49e8e998f732a7/68747470733a2f2f666972656261736573746f726167652e676f6f676c65617069732e636f6d2f76302f622f746f646f2d6170702d63386331392e61707073706f742e636f6d2f6f2f53637265656e73686f74253230283938292e706e673f616c743d6d6564696126746f6b656e3d33643335646366322d626666322d343730382d393031632d343232383866383332386633",
+    tags: ["React Js", "Typescript", "Node JS", ""],
+    category: "web site",
+    github: "https://github.com/unenbat623/Todo-Web-App",
+    webapp: "https://rishav-react-todo.netlify.app/",
+  },
+
+  {
+    id: 3,
+    title: "GELD",
+    date: "Jun 2024-",
+    description:
+      " A GELD Web App made with React JS, and Material UI. It has a login page where users can log in with their Google account. It has a sidebar where users can see all the tasks and can create a new task. It has a calendar where users can see all the tasks on a particular date.",
+    image:
+      "https://camo.githubusercontent.com/84ac6ab6f378348ef28d8184062b7e9e3511a1252ae3966eaa49e8e998f732a7/68747470733a2f2f666972656261736573746f726167652e676f6f676c65617069732e636f6d2f76302f622f746f646f2d6170702d63386331392e61707073706f742e636f6d2f6f2f53637265656e73686f74253230283938292e706e673f616c743d6d6564696126746f6b656e3d33643335646366322d626666322d343730382d393031632d343232383866383332386633",
+    tags: ["React Js", "Typescript", "Node JS", ""],
+    category: "web app",
+    github: "https://github.com/unenbat623/Todo-Web-App",
+    webapp: "https://rishav-react-todo.netlify.app/",
+  },
 ];

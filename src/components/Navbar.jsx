@@ -100,7 +100,7 @@ const LanguageButton = styled.a`
   border-radius: 20px;
   cursor: pointer;
   padding: 10px 20px;
-  font-size: 16px;
+  font-size: 19px;
   font-weight: 500;
   transition: all 0.6s ease-in-out;
   text-decoration: none;
@@ -200,7 +200,7 @@ const Navbar = () => {
           <GithubButton href={Bio.github} target="_Blank">
             Github Profile
           </GithubButton>
-          <LanguageButton href={Bio.github} target="_Blank">
+          <LanguageButton tton href={Bio.github} target="_Blank">
             <p>En</p>
             <p>/</p>
             <p>Mon</p>
