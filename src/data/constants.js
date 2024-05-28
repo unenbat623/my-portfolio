@@ -10,6 +10,19 @@ export const Bio = {
   twitter: "https://twitter.com/Unenbat050604",
   insta: "https://www.instagram.com/unenbat_618/",
   facebook: "https://www.facebook.com/profile.php?id=100089448708671",
+  mn: {
+    name: "Б. Өнөнбат",
+    roles: ["Бүтэн Stack Developer", "Программист"],
+    description:
+      "Би урам зоригтой, олон талт хувь хүн бөгөөд үргэлж шинэ сорилтуудыг даван туулах хүсэл эрмэлзэлтэй байдаг. Би сурах хүсэл тэмүүллээр өндөр чанартай үр дүнд хүрэхийн төлөө ажилладаг. Эерэг хандлага, өсөлтийн сэтгэлгээний хувьд би чухал хувь нэмэр оруулахад бэлэн байна. агуу зүйлд хүрэх.",
+    github: "https://github.com/unenbat623",
+    resume:
+      "https://www.figma.com/file/ommgInCjaW15chlhXWsBvl/Untitled?type=design&node-id=0-1&mode=design&t=scA8eZviRh8fuWqt-0",
+    linkedin: "https://www.linkedin.com/in/b-unenbat-7a4b7823b/",
+    twitter: "https://twitter.com/Unenbat050604",
+    insta: "https://www.instagram.com/unenbat_618/",
+    facebook: "https://www.facebook.com/profile.php?id=100089448708671",
+  },
 };
 
 export const skills = [

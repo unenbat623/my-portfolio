@@ -148,7 +148,15 @@ const MobileMenu = styled.ul`
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [language, setLanguage] = useState("mn");
+
   const theme = useTheme();
+  const bioData = Bio[language] || Bio;
+
+  const handleChangeLanguage = (newLanguage) => {
+    setLanguage(newLanguage);
+  };
+
   return (
     <Nav>
       <NavbarContainer>
@@ -184,7 +192,7 @@ const Navbar = () => {
               Education
             </NavLink>
             <GithubButton
-              href={Bio.github}
+              href={bioData.github}
               target="_Blank"
               style={{
                 background: theme.primary,
@@ -197,13 +205,14 @@ const Navbar = () => {
         )}
 
         <ButtonContainer>
-          <GithubButton href={Bio.github} target="_Blank">
+          <GithubButton href={bioData.github} target="_Blank">
             Github Profile
           </GithubButton>
-          <LanguageButton tton href={Bio.github} target="_Blank">
+          <LanguageButton onClick={() => handleChangeLanguage("en")}>
             <p>En</p>
-            <p>/</p>
-            <p>Mon</p>
+          </LanguageButton>
+          <LanguageButton onClick={() => handleChangeLanguage("mn")}>
+            <p>Mn</p>
           </LanguageButton>
         </ButtonContainer>
       </NavbarContainer>
