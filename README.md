@@ -1,70 +1,81 @@
-# Getting Started with Create React App
+# B Unenbat - Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Hi, I am **B Unenbat**, a passionate **Full Stack Developer** and **Programmer**. This is my personal portfolio website showcasing my skills, experience, projects, and education. The site is built with modern web technologies, featuring 3D animations, responsive design, and bilingual support (English & Mongolian).
 
-## Available Scripts
+## 🚀 Features
 
-In the project directory, you can run:
+-   **3D Visuals**: Immersive background with starry field animations and 3D tilt effects on cards.
+-   **Responsive Design**: Fully optimized for Desktop, Tablet, and Mobile devices.
+-   **Performance Optimized**:
+    -   Lazy loading for below-the-fold sections.
+    -   Optimized image assets.
+    -   Memoized components for smooth rendering.
+-   **Bilingual Support**: Toggle between **English** and **Mongolian** languages.
+-   **Interactive Sections**:
+    -   **Hero**: Dynamic typewriter effect and 3D background.
+    -   **Skills**: Categorized visualization of technical skills.
+    -   **Experience & Education**: Vertical timelines highlighting career path.
+    -   **Projects**: Showcase of recent works with links to GitHub and Live Demos.
+    -   **Contact**: Functional contact form powered by **EmailJS**.
 
-### `npm start`
+## 🛠 Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Frontend
+-   **React.js** (v18)
+-   **Tailwind CSS** & **Styled Components** (Migration to Tailwind active)
+-   **Material UI** (Icons & Components)
+-   **Three.js** / **@react-three/fiber** / **drei** (3D Elements)
+-   **Framer Motion** (Animations)
+-   **React Router** (Navigation)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Tools & Libraries
+-   **EmailJS** (Contact Form)
+-   **React Tilt** (Card Effects)
+-   **Typewriter Effect** (Hero Text)
+-   **React Vertical Timeline**
 
-### `npm test`
+## 💻 Getting Started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To run this project locally, follow these steps:
 
-### `npm run build`
+### Prerequisites
+Make sure you have **Node.js** installed on your machine.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1.  **Clone the repository**:
+    ```bash
+    git clone https://github.com/unenbat623/my-portfolio.git
+    cd my-portfolio
+    ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2.  **Install dependencies**:
+    ```bash
+    npm install
+    # or
+    yarn install
+    ```
 
-### `npm run eject`
+3.  **Start the development server**:
+    ```bash
+    npm start
+    ```
+    The app will open at [http://localhost:3000](http://localhost:3000).
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Build for Production
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+To create an optimized production build:
+```bash
+npm run build
+```
+This will generate a `build` folder ready for deployment.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 📬 Contact
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+-   **GitHub**: [unenbat623](https://github.com/unenbat623)
+-   **LinkedIn**: [B Unenbat](https://www.linkedin.com/in/b-unenbat-7a4b7823b/)
+-   **Email**: [unenbat623@gmail.com](mailto:unenbat623@gmail.com)
+-   **Instagram**: [@unenbat_618](https://www.instagram.com/unenbat_618/)
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+*© 2024 B Unenbat. All rights reserved.*
