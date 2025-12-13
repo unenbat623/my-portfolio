@@ -7,6 +7,7 @@ const ProjectCard = ({ project }) => {
         src={project.image}
         alt=""
         className="w-full h-[180px] bg-white rounded-[10px] shadow-[0_0_16px_2px_rgba(0,0,0,0.3)] object-cover"
+        loading="lazy"
       />
       <div className="w-full flex items-center flex-wrap gap-[8px] mt-[4px]">
         {/* Tags could go here if needed */}
@@ -29,6 +30,7 @@ const ProjectCard = ({ project }) => {
             src={member.img}
             alt=""
             className="w-[38px] h-[38px] rounded-full -ml-[10px] bg-white shadow-[0_0_10px_rgba(0,0,0,0.2)] border-[3px] border-card object-cover"
+            loading="lazy"
           />
         ))}
       </div>
@@ -44,4 +46,4 @@ const ProjectCard = ({ project }) => {
   );
 };
 
-export default ProjectCard;
+export default React.memo(ProjectCard);

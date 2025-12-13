@@ -64,7 +64,8 @@ const Navbar = () => {
         <div className="w-[80%] h-full hidden md:flex justify-end items-center px-[6px]">
           <a
             href={bioData.github}
-            target="_Blank"
+            target="_blank"
+            rel="noreferrer"
             className="border border-primary text-primary flex justify-center items-center rounded-[20px] cursor-pointer px-[20px] py-[10px] text-[16px] font-medium transition-all duration-500 ease-in-out no-underline hover:bg-primary hover:text-text_primary"
           >
             {navData.github}
@@ -81,8 +82,8 @@ const Navbar = () => {
         {isOpen && (
           <ul
             className={`w-full flex flex-col items-start gap-[16px] px-[40px] pt-[12px] pb-[24px] bg-[#19192499] absolute top-[80px] right-0 transition-all duration-600 ease-in-out rounded-b-[20px] shadow-[0_0_10px_0_rgba(0,0,0,0.2)] ${isOpen
-                ? "translate-y-0 opacity-100 z-[1000]"
-                : "-translate-y-full opacity-0 -z-[1000]"
+              ? "translate-y-0 opacity-100 z-[1000]"
+              : "-translate-y-full opacity-0 -z-[1000]"
               }`}
           >
             <a
@@ -122,7 +123,8 @@ const Navbar = () => {
             </a>
             <a
               href={bioData.github}
-              target="_Blank"
+              target="_blank"
+              rel="noreferrer"
               className="bg-primary text-text_primary flex justify-center items-center rounded-[20px] cursor-pointer px-[20px] py-[10px] text-[16px] font-medium transition-all duration-500 ease-in-out no-underline hover:bg-primary hover:text-text_primary"
             >
               {navData.github}

@@ -361,4 +361,4 @@ const HeroBgAnimation = () => (
   </div>
 );
 
-export default HeroBgAnimation;
+export default React.memo(HeroBgAnimation);

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Bio, staticText } from "../../data/constants";
 import Typewriter from "typewriter-effect";
 import HeroImg from "../../images/HeroImage.jpg";
@@ -17,6 +17,16 @@ const Hero = () => {
   const { language } = useLanguage();
   const bioData = language === "mn" ? Bio.mn : Bio;
   const heroText = staticText[language].hero;
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <div id="About">
@@ -62,25 +72,33 @@ const Hero = () => {
                 {...headContentAnimation}
                 className="flex lg:justify-center"
               >
-                <a
+                <button
                   href={bioData.resume}
                   target="display"
-                  className="appearance-none no-underline w-[95%] max-w-[300px] text-center py-[16px] text-white rounded-[50px] font-semibold text-[20px] bg-gradient-to-bl from-[#ff2450] to-[#ff2400] shadow-[20px_20px_60px_#1f2634,-20px_-20px_60px_#1f2634] hover:scale-105 hover:shadow-[20px_20px_60px_#1F2634] hover:brightness-100 transition-all duration-400 ease-in-out sm:py-[12px] sm:text-[18px]"
+                  className="appearance-none no-underline w-[95%] max-w-[300px] text-center p-[16px] text-white rounded-[50px] font-semibold text-[20px] bg-gradient-to-bl from-[#ff2450] to-[#ff2400] shadow-[0_4px_14px_0_rgba(255,36,0,0.39)] hover:scale-105 hover:shadow-[0_6px_20px_rgba(255,36,0,0.23)] hover:brightness-100 transition-all duration-400 ease-in-out sm:py-[12px] sm:text-[18px]"
                 >
                   {heroText.checkResume}
-                </a>
+                </button>
               </motion.div>
             </div>
 
             <div className="w-full order-2 flex justify-end lg:order-1 lg:flex-col lg:items-center lg:justify-center lg:mb-[80px] sm:mb-[30px]">
               <motion.div {...headContentAnimation}>
-                <Tilt>
+                {isMobile ? (
                   <img
                     src={HeroImg}
                     alt="Hero"
                     className="rounded-full w-full h-full max-w-[400px] max-h-[400px] border-[2px] border-primary sm:max-w-[280px] sm:max-h-[280px] object-cover"
                   />
-                </Tilt>
+                ) : (
+                  <Tilt>
+                    <img
+                      src={HeroImg}
+                      alt="Hero"
+                      className="rounded-full w-full h-full max-w-[400px] max-h-[400px] border-[2px] border-primary sm:max-w-[280px] sm:max-h-[280px] object-cover"
+                    />
+                  </Tilt>
+                )}
               </motion.div>
             </div>
           </div>

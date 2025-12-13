@@ -11,6 +11,7 @@ const ExperienceCard = ({ experience }) => {
           alt={experience?.company}
           style={{ borderRadius: "50%", objectFit: "cover" }}
           src={experience?.img}
+          loading="lazy"
         />
       }
       contentStyle={{
@@ -34,6 +35,7 @@ const ExperienceCard = ({ experience }) => {
           src={experience?.img}
           alt=""
           className="h-[50px] rounded-[10px] mt-[4px] md:h-[40px]"
+          loading="lazy"
         />
         <div className="w-full flex flex-col">
           <div className="text-[18px] font-semibold text-text_primary/99 md:text-[14px]">
@@ -76,4 +78,4 @@ const ExperienceCard = ({ experience }) => {
   );
 };
 
-export default ExperienceCard;
+export default React.memo(ExperienceCard);
