@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 import { Bio, staticText } from "../../data/constants";
 import Typewriter from "typewriter-effect";
 import HeroImg from "../../images/HeroImage.jpg";
@@ -14,208 +13,6 @@ import {
 } from "../../utils/motion";
 import StarCanvas from "../canvas/Stars";
 
-const HeroContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  position: relative;
-  padding: 80px 30px;
-  z-index: 1;
-
-  @media (max-width: 960px) {
-    padding: 66px 16px;
-  }
-
-  @media (max-width: 640px) {
-    padding: 32px 16px;
-  }
-
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 95%, 0 100%);
-`;
-const HeroInnerContainer = styled.div`
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  max-width: 1100px;
-
-  @media (max-width: 960px) {
-    flex-direction: column;
-  }
-`;
-const HeroLeftContainer = styled.div`
-  width: 100%;
-  order: 1;
-  @media (max-width: 960px) {
-    order: 2;
-    margin-bottom: 30px;
-    display: flex;
-    gap: 6px;
-    flex-direction: column;
-    align-items: center;
-  }
-`;
-const HeroRightContainer = styled.div`
-  width: 100%;
-  order: 2;
-  display: flex;
-  justify-content: end;
-  @media (max-width: 960px) {
-    order: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-contents: center;
-    margin-bottom: 80px;
-  }
-
-  @media (max-width: 640px) {
-    margin-bottom: 30px;
-  }
-`;
-
-const Title = styled.div`
-  font-weight: 700;
-  font-size: 50px;
-  color: ${({ theme }) => theme.text_primary};
-  line-height: 68px;
-
-  @media (max-width: 960px) {
-    text-align: center;
-  }
-
-  @media (max-width: 960px) {
-    font-size: 40px;
-    line-height: 48px;
-    margin-bottom: 8px;
-  }
-`;
-
-const TextLoop = styled.div`
-  font-weight: 600;
-  font-size: 32px;
-  display: flex;
-  gap: 12px;
-  color: ${({ theme }) => theme.text_primary};
-  line-height: 68px;
-
-  @media (max-width: 960px) {
-    text-align: center;
-  }
-
-  @media (max-width: 960px) {
-    font-size: 22px;
-    line-height: 48px;
-    margin-bottom: 16px;
-  }
-`;
-
-const Span = styled.div`
-  cursor: pointer;
-  color: ${({ theme }) => theme.primary};
-`;
-
-const SubTitle = styled.div`
-  font-size: 20px;
-  line-height: 32px;
-  margin-bottom: 42px;
-  color: ${({ theme }) => theme.text_primary + 95};
-
-  @media (max-width: 960px) {
-    text-align: center;
-  }
-
-  @media (max-width: 960px) {
-    font-size: 16px;
-    line-height: 32px;
-  }
-`;
-
-const ResumeButton = styled.a`
-  -webkit-appearance: button;
-  -moz-appearance: button;
-  appearance: button;
-  text-decoration: none;
-
-  width: 95%;
-  max-width: 300px;
-  text-align: center;
-  padding: 16px 0;
-
-  background: #ff2450;
-  background: linear-gradient(
-    225deg,
-    #ff2450 0%,
-    #ff2400 100%
-  );
-  background: -moz-linear-gradient(
-    225deg,
-    #ff2450 0%,
-    #ff2400 100%
-  );
-  background: -webkit-linear-gradient(
-    225deg,
-    #ff2450 0%,
-    #ff2400 100%
-  );
-  box-shadow: 20px 20px 60px #1f2634, -20px -20px 60px #1f2634;
-  border-radius: 50px;
-  font-weight: 600;
-  font-size: 20px;
-
-     &:hover {
-        transform: scale(1.05);
-    transition: all 0.4s ease-in-out;
-    box-shadow:  20px 20px 60px #1F2634,
-    filter: brightness(1);
-    }    
-    
-    
-    @media (max-width: 640px) {
-        padding: 12px 0;
-        font-size: 18px;
-    } 
-    color: white;
-`;
-
-const Img = styled.img`
-  border-radius: 50%;
-  width: 100%;
-  height: 100%;
-  max-width: 400px;
-  max-height: 400px;
-  border: 2px solid ${({ theme }) => theme.primary};
-
-  @media (max-width: 640px) {
-    max-width: 280px;
-    max-height: 280px;
-  }
-`;
-
-const HeroBg = styled.div`
-  position: absolute;
-  display: flex;
-  justify-content: end;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  max-width: 1360px;
-  overflow: hidden;
-  padding: 0 30px;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
-
-  @media (max-width: 960px) {
-    justify-content: center;
-    padding: 0 0px;
-  }
-`;
-
 const Hero = () => {
   const { language } = useLanguage();
   const bioData = language === "mn" ? Bio.mn : Bio;
@@ -223,22 +20,27 @@ const Hero = () => {
 
   return (
     <div id="About">
-      <HeroContainer>
-        <HeroBg>
+      <div
+        className="flex justify-center relative py-[80px] px-[30px] z-10 lg:py-[66px] lg:px-[16px] sm:py-[32px]"
+        style={{
+          clipPath: "polygon(0 0, 100% 0, 100% 100%, 70% 95%, 0 100%)",
+        }}
+      >
+        <div className="absolute flex justify-end inset-0 w-full h-full max-w-[1360px] overflow-hidden px-[30px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 lg:justify-center lg:px-0">
           <StarCanvas />
           <HeroBgAnimation />
-        </HeroBg>
+        </div>
 
         <motion.div {...headContainerAnimation}>
-          <HeroInnerContainer>
-            <HeroLeftContainer>
+          <div className="relative flex justify-between items-center w-full max-w-[1100px] lg:flex-col">
+            <div className="w-full order-1 lg:order-2 lg:mb-[30px] lg:flex lg:flex-col lg:items-center lg:gap-[6px]">
               <motion.div {...headTextAnimation}>
-                <Title>
+                <div className="font-bold text-[50px] text-text_primary leading-[68px] lg:text-center lg:text-[40px] lg:leading-[48px] lg:mb-[8px]">
                   {heroText.hi} <br /> {bioData.name}
-                </Title>
-                <TextLoop>
+                </div>
+                <div className="font-semibold text-[32px] flex gap-[12px] text-text_primary leading-[68px] lg:text-center lg:text-[22px] lg:leading-[48px] lg:mb-[16px]">
                   {heroText.iam}
-                  <Span>
+                  <span className="cursor-pointer text-primary">
                     <Typewriter
                       options={{
                         strings: bioData.roles,
@@ -246,28 +48,44 @@ const Hero = () => {
                         loop: true,
                       }}
                     />
-                  </Span>
-                </TextLoop>
+                  </span>
+                </div>
               </motion.div>
 
               <motion.div {...headContentAnimation}>
-                <SubTitle>{bioData.description}</SubTitle>
+                <div className="text-[20px] leading-[32px] mb-[42px] text-text_primary/95 lg:text-center lg:text-[16px]">
+                  {bioData.description}
+                </div>
               </motion.div>
 
-              <ResumeButton href={bioData.resume} target="_blank">
-                {heroText.checkResume}
-              </ResumeButton>
-            </HeroLeftContainer>
-            <HeroRightContainer>
+              <motion.div
+                {...headContentAnimation}
+                className="flex lg:justify-center"
+              >
+                <a
+                  href={bioData.resume}
+                  target="display"
+                  className="appearance-none no-underline w-[95%] max-w-[300px] text-center py-[16px] text-white rounded-[50px] font-semibold text-[20px] bg-gradient-to-bl from-[#ff2450] to-[#ff2400] shadow-[20px_20px_60px_#1f2634,-20px_-20px_60px_#1f2634] hover:scale-105 hover:shadow-[20px_20px_60px_#1F2634] hover:brightness-100 transition-all duration-400 ease-in-out sm:py-[12px] sm:text-[18px]"
+                >
+                  {heroText.checkResume}
+                </a>
+              </motion.div>
+            </div>
+
+            <div className="w-full order-2 flex justify-end lg:order-1 lg:flex-col lg:items-center lg:justify-center lg:mb-[80px] sm:mb-[30px]">
               <motion.div {...headContentAnimation}>
                 <Tilt>
-                  <Img src={HeroImg} alt="B Unenbat" />
+                  <img
+                    src={HeroImg}
+                    alt="Hero"
+                    className="rounded-full w-full h-full max-w-[400px] max-h-[400px] border-[2px] border-primary sm:max-w-[280px] sm:max-h-[280px] object-cover"
+                  />
                 </Tilt>
               </motion.div>
-            </HeroRightContainer>
-          </HeroInnerContainer>
+            </div>
+          </div>
         </motion.div>
-      </HeroContainer>
+      </div>
     </div>
   );
 };

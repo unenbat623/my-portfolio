@@ -1,119 +1,46 @@
 import React from "react";
-import styled from "styled-components";
-
-const Card = styled.div`
-  width: 330px;
-  height: 490px;
-  background-color: ${({ theme }) => theme.card};
-  cursor: pointer;
-  border-radius: 10px;
-  box-shadow: 0 0 12px 4px rgba(0, 0, 0, 0.4);
-  overflow: hidden;
-  padding: 26px 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  transition: all 0.5s ease-in-out;
-  &:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 0 50px 4px rgba(0, 0, 0, 0.6);
-    filter: brightness(1.1);
-  }
-`;
-const Image = styled.img`
-  width: 100%;
-  height: 180px;
-  background-color: ${({ theme }) => theme.white};
-  border-radius: 10px;
-  box-shadow: 0 0 16px 2px rgba(0, 0, 0, 0.3);
-`;
-const Tags = styled.div`
-  width: 100%;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 4px;
-`;
-const Details = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 0px;
-  padding: 0px 2px;
-`;
-const Title = styled.div`
-  font-size: 20px;
-  font-weight: 600;
-  color: ${({ theme }) => theme.text_secondary};
-  overflow: hidden;
-  display: -webkit-box;
-  max-width: 100%;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-`;
-const Date = styled.div`
-  font-size: 12px;
-  margin-left: 2px;
-  font-weight: 400;
-  color: ${({ theme }) => theme.text_secondary + 80};
-  @media only screen and (max-width: 768px) {
-    font-size: 10px;
-  }
-`;
-const Description = styled.div`
-  font-weight: 400;
-  color: ${({ theme }) => theme.text_secondary + 99};
-  overflow: hidden;
-  margin-top: 8px;
-  display: -webkit-box;
-  max-width: 100%;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  text-overflow: ellipsis;
-`;
-const Members = styled.div`
-  display: flex;
-  align-items: center;
-  padding-left: 10px;
-`;
-const Avatar = styled.img`
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  margin-left: -10px;
-  background-color: ${({ theme }) => theme.white};
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  border: 3px solid ${({ theme }) => theme.card};
-`;
-const Button = styled.a`
-  color: ${({ theme }) => theme.primary};
-  text-decoration: none;
-  font-weight: 600;
-  text-align: center;
-`;
 
 const ProjectCard = ({ project }) => {
   return (
-    <Card>
-      <Image src={project.image} />
-      <Tags></Tags>
-      <Details>
-        <Title>{project.title}</Title>
-        <Date>{project.date}</Date>
-        <Description>{project.description}</Description>
-      </Details>
-      <Members>
-        {project.member?.map((member) => (
-          <Avatar src={member.img} />
+    <div className="w-[330px] h-[490px] bg-card cursor-pointer rounded-[10px] shadow-[0_0_12px_4px_rgba(0,0,0,0.4)] overflow-hidden py-[26px] px-[20px] flex flex-col gap-[14px] transition-all duration-500 ease-in-out hover:-translate-y-[10px] hover:shadow-[0_0_50px_4px_rgba(0,0,0,0.6)] hover:brightness-110">
+      <img
+        src={project.image}
+        alt=""
+        className="w-full h-[180px] bg-white rounded-[10px] shadow-[0_0_16px_2px_rgba(0,0,0,0.3)] object-cover"
+      />
+      <div className="w-full flex items-center flex-wrap gap-[8px] mt-[4px]">
+        {/* Tags could go here if needed */}
+      </div>
+      <div className="w-full flex flex-col gap-0 px-[2px]">
+        <div className="text-[20px] font-semibold text-text_secondary overflow-hidden line-clamp-2 text-overflow-ellipsis">
+          {project.title}
+        </div>
+        <div className="text-[12px] ml-[2px] font-normal text-text_secondary/80 md:text-[10px]">
+          {project.date}
+        </div>
+        <div className="font-normal text-text_secondary/99 overflow-hidden mt-[8px] line-clamp-3 text-overflow-ellipsis">
+          {project.description}
+        </div>
+      </div>
+      <div className="flex items-center pl-[10px]">
+        {project.member?.map((member, index) => (
+          <img
+            key={index}
+            src={member.img}
+            alt=""
+            className="w-[38px] h-[38px] rounded-full -ml-[10px] bg-white shadow-[0_0_10px_rgba(0,0,0,0.2)] border-[3px] border-card object-cover"
+          />
         ))}
-      </Members>
-      <Button href={project.github} target="_blank">
+      </div>
+      <a
+        href={project.github}
+        target="_blank"
+        rel="noreferrer"
+        className="text-primary no-underline font-semibold text-center"
+      >
         View Code
-      </Button>
-    </Card>
+      </a>
+    </div>
   );
 };
 

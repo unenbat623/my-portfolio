@@ -1,113 +1,7 @@
 import React, { useRef } from "react";
-import styled from "styled-components";
 import emailjs from "@emailjs/browser";
 import { staticText } from "../../data/constants";
 import { useLanguage } from "../../utils/LanguageContext";
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
-  z-index: 1;
-  align-items: center;
-`;
-
-const Wrapper = styled.div`
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
-  max-width: 1100px;
-  gap: 12px;
-  @media (max-width: 960px) {
-    flex-direction: column;
-  }
-`;
-
-export const Title = styled.div`
-  font-size: 52px;
-  text-align: center;
-  font-weight: 600;
-  margin-top: 20px;
-  color: ${({ theme }) => theme.text_primary};
-  @media (max-width: 768px) {
-    margin-top: 12px;
-    font-size: 32px;
-  }
-`;
-
-export const Desc = styled.div`
-  font-size: 18px;
-  text-align: center;
-  max-width: 600px;
-  color: ${({ theme }) => theme.text_secondary};
-  @media (max-width: 768px) {
-    font-size: 16px;
-  }
-`;
-
-const ContactForm = styled.form`
-  width: 95%;
-  max-width: 600px;
-  display: flex;
-  flex-direction: column;
-  background-color: rgba(17, 25, 40, 0.83);
-  border: 1px solid rgba(255, 255, 255, 0.125);
-  padding: 32px;
-  border-radius: 12px;
-  box-shadow: rgba(23, 92, 230, 0.1) 0px 4px 24px;
-  margin-top: 28px;
-  gap: 12px;
-`;
-const ContactTitle = styled.div`
-  font-size: 28px;
-  margin-bottom: 6px;
-  font-weight: 600;
-  color: ${({ theme }) => theme.text_primary};
-`;
-const ContactInput = styled.input`
-  flex: 1;
-  background-color: transparent;
-  border: 1px solid ${({ theme }) => theme.text_secondary + 50};
-  outline: none;
-  font-size: 18px;
-  color: ${({ theme }) => theme.text_primary};
-  border-radius: 12px;
-  padding: 12px 16px;
-  &:focus {
-    border: 1px solid ${({ theme }) => theme.primary};
-  }
-`;
-const ContactInputMessage = styled.textarea`
-  flex: 1;
-  background-color: transparent;
-  border: 1px solid ${({ theme }) => theme.text_secondary + 50};
-  outline: none;
-  font-size: 18px;
-  color: ${({ theme }) => theme.text_primary};
-  border-radius: 12px;
-  padding: 12px 16px;
-  &:focus {
-    border: 1px solid ${({ theme }) => theme.primary};
-  }
-`;
-const ContactButton = styled.input`
-  width: 100%;
-  text-decoration: none;
-  text-align: center;
-  background: #ff2400;
-  padding: 13px 16px;
-  margin-top: 2px;
-  border-radius: 12px;
-  border: none;
-  color: ${({ theme }) => theme.text_primary};
-  font-size: 18px;
-  font-weight: 600;
-  cursor: pointer;
-`;
 
 const Contact = () => {
   const { language } = useLanguage();
@@ -135,26 +29,54 @@ const Contact = () => {
       );
   };
   return (
-    <Container id="Contact">
-      <Wrapper>
-        <Title>{text.title}</Title>
-        <Desc
-          style={{
-            marginBottom: "40px",
-          }}
-        >
+    <div
+      id="Contact"
+      className="flex flex-col justify-center relative z-10 items-center"
+    >
+      <div className="relative flex justify-between items-center flex-col w-full max-w-[1100px] gap-[12px]">
+        <div className="text-[52px] text-center font-semibold mt-[20px] text-text_primary md:mt-[12px] md:text-[32px]">
+          {text.title}
+        </div>
+        <div className="text-[18px] text-center max-w-[600px] text-text_secondary md:text-[16px] mb-[40px]">
           {text.desc}
-        </Desc>
-        <ContactForm ref={form} onSubmit={handelSubmit}>
-          <ContactTitle>{text.title}</ContactTitle>
-          <ContactInput placeholder={text.email} name="from_email" />
-          <ContactInput placeholder={text.name} name="from_name" />
-          <ContactInput placeholder={text.subject} name="subject" />
-          <ContactInputMessage placeholder={text.message} name="message" rows={4} />
-          <ContactButton type="submit" value={text.send} />
-        </ContactForm>
-      </Wrapper>
-    </Container>
+        </div>
+        <form
+          ref={form}
+          onSubmit={handelSubmit}
+          className="w-[95%] max-w-[600px] flex flex-col bg-[rgba(17,25,40,0.83)] border border-[rgba(255,255,255,0.125)] p-[32px] rounded-[12px] shadow-[0_4px_24px_rgba(23,92,230,0.1)] mt-[28px] gap-[12px]"
+        >
+          <div className="text-[28px] mb-[6px] font-semibold text-text_primary">
+            {text.title}
+          </div>
+          <input
+            placeholder={text.email}
+            name="from_email"
+            className="flex-1 bg-transparent border border-text_secondary/50 outline-none text-[18px] text-text_primary rounded-[12px] py-[12px] px-[16px] focus:border-primary"
+          />
+          <input
+            placeholder={text.name}
+            name="from_name"
+            className="flex-1 bg-transparent border border-text_secondary/50 outline-none text-[18px] text-text_primary rounded-[12px] py-[12px] px-[16px] focus:border-primary"
+          />
+          <input
+            placeholder={text.subject}
+            name="subject"
+            className="flex-1 bg-transparent border border-text_secondary/50 outline-none text-[18px] text-text_primary rounded-[12px] py-[12px] px-[16px] focus:border-primary"
+          />
+          <textarea
+            placeholder={text.message}
+            name="message"
+            rows={4}
+            className="flex-1 bg-transparent border border-text_secondary/50 outline-none text-[18px] text-text_primary rounded-[12px] py-[12px] px-[16px] focus:border-primary"
+          />
+          <input
+            type="submit"
+            value={text.send}
+            className="w-full text-center bg-[#ff2400] py-[13px] px-[16px] mt-[2px] rounded-[12px] border-none text-text_primary text-[18px] font-semibold cursor-pointer"
+          />
+        </form>
+      </div>
+    </div>
   );
 };
 

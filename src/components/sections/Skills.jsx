@@ -1,156 +1,53 @@
 import React from "react";
-import styled from "styled-components";
 import { skills, staticText } from "../../data/constants";
 import { Tilt } from "react-tilt";
 import { useLanguage } from "../../utils/LanguageContext";
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
-  z-index: 1;
-  align-items: center;
-`;
-
-const Wrapper = styled.div`
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
-  max-width: 1100px;
-  gap: 12px;
-  @media (max-width: 960px) {
-    flex-direction: column;
-  }
-`;
-export const Title = styled.div`
-  font-size: 42px;
-  text-align: center;
-  font-weight: 600;
-  margin-top: 20px;
-  color: ${({ theme }) => theme.text_primary};
-  @media (max-width: 768px) {
-    margin-top: 12px;
-    font-size: 32px;
-  }
-`;
-export const Desc = styled.div`
-  font-size: 18px;
-  text-align: center;
-  max-width: 600px;
-  color: ${({ theme }) => theme.text_secondary};
-  @media (max-width: 768px) {
-    font-size: 16px;
-  }
-`;
-
-const SkillsContainer = styled.div`
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 20px;
-  gap: 50px;
-  justify-content: center;
-`;
-
-const Skill = styled.div`
-  width: 100%;
-  max-width: 500px;
-  background-color: rgba(17, 25, 40, 0.83);
-  border: 1px solid rgba(255, 255, 255, 0.125);
-  box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
-  border-radius: 16px;
-  padding: 18px 36px;
-  @media (max-width: 768px) {
-    max-width: 400px;
-    padding: 10px 36px;
-  }
-
-  @media (max-width: 500px) {
-    max-width: 330px;
-    padding: 10px 36px;
-  }
-`;
-
-const SkillTitle = styled.div`
-  font-size: 28px;
-  font-weight: 600;
-  margin-bottom: 20px;
-  text-align: center;
-  color: ${({ theme }) => theme.text_secondary};
-`;
-
-const SkillList = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 20px;
-`;
-const SkillItem = styled.div`
-  font-size: 16px;
-  font-weight: 400;
-  color: ${({ theme }) => theme.text_primary + 80};
-  border: 1px solid ${({ theme }) => theme.text_primary + 80};
-  border-radius: 12px;
-  padding: 12px 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-
-  @media (max-width: 768px) {
-    font-size: 14px;
-    padding: 8px 12px;
-  }
-  @media (max-width: 500px) {
-    font-size: 14px;
-    padding: 6px 12px;
-  }
-`;
 
 const Skills = () => {
   const { language } = useLanguage();
   const text = staticText[language].skills;
 
   return (
-    <Container id="Skills">
-      <Wrapper>
-        <Title>{text.title}</Title>
-        <Desc
-          style={{
-            marginBottom: "40px",
-          }}
-        >
+    <div
+      id="Skills"
+      className="flex flex-col justify-center relative z-[1] items-center"
+    >
+      <div className="relative flex justify-between items-center flex-col w-full max-w-[1100px] gap-[12px]">
+        <div className="text-[42px] text-center font-semibold mt-[20px] text-text_primary md:mt-[12px] md:text-[32px]">
+          {text.title}
+        </div>
+        <div className="text-[18px] text-center max-w-[600px] text-text_secondary md:text-[16px] mb-[40px]">
           {text.desc}
-        </Desc>
+        </div>
 
-        <SkillsContainer>
+        <div className="w-full flex flex-wrap mt-[20px] gap-[50px] justify-center">
           {skills.map((skill, index) => (
-            <Tilt>
-              <Skill key={`skill-${index}`}>
-                <SkillTitle>{skill.title}</SkillTitle>
-                <SkillList>
+            <Tilt key={`skill-${index}`}>
+              <div className="w-full max-w-[500px] bg-[rgba(17,25,40,0.83)] border border-[rgba(255,255,255,0.125)] shadow-[0_4px_24px_rgba(23,92,230,0.15)] rounded-[16px] py-[18px] px-[36px] md:max-w-[400px] md:py-[10px] md:px-[36px] sm:max-w-[330px] sm:py-[10px] sm:px-[36px]">
+                <div className="text-[28px] font-semibold text-text_secondary mb-[20px] text-center">
+                  {skill.title}
+                </div>
+                <div className="flex justify-center flex-wrap gap-[12px] mb-[20px]">
                   {skill.skills.map((item, index_x) => (
-                    <SkillItem key={`skill-x-${index_x}`}>
+                    <div
+                      key={`skill-x-${index_x}`}
+                      className="text-[16px] font-normal text-text_primary/80 border border-text_primary/80 rounded-[12px] py-[12px] px-[16px] flex items-center justify-center gap-[8px] md:text-[14px] md:py-[8px] md:px-[12px] sm:text-[14px] sm:py-[6px] sm:px-[12px]"
+                    >
                       <img
                         alt=""
-                        style={{ width: "24px", height: "24px" }}
+                        className="w-[24px] h-[24px]"
                         src={item.image}
                       />
                       {item.name}
-                    </SkillItem>
+                    </div>
                   ))}
-                </SkillList>
-              </Skill>
+                </div>
+              </div>
             </Tilt>
           ))}
-        </SkillsContainer>
-      </Wrapper>
-    </Container>
+        </div>
+      </div>
+    </div>
   );
 };
 

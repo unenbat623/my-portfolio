@@ -53,7 +53,7 @@ export const staticText = {
     },
     skills: {
       title: "Skills",
-      desc: "Here are some of my skills on which I have been working on for the past 2 years.",
+      desc: "Here are some of my skills on which I have been working on for the past 3 years.",
     },
     experience: {
       title: "Experience",

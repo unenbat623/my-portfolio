@@ -1,54 +1,9 @@
 import React from "react";
 import { VerticalTimeline } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
-import styled from "styled-components";
 import { experiences, experiencesMn, staticText } from "../../data/constants";
 import ExperienceCard from "../cards/ExperienceCard";
 import { useLanguage } from "../../utils/LanguageContext";
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-top: 50px;
-  position: relative;
-  z-index: 1;
-  align-items: center;
-`;
-
-const Wrapper = styled.div`
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
-  max-width: 1100px;
-  gap: 12px;
-  @media (max-width: 960px) {
-    flex-direction: column;
-  }
-`;
-export const Title = styled.div`
-  font-size: 52px;
-  text-align: center;
-  font-weight: 600;
-  margin-top: 20px;
-  color: ${({ theme }) => theme.text_primary};
-  @media (max-width: 768px) {
-    margin-top: 12px;
-    font-size: 32px;
-  }
-`;
-export const Desc = styled.div`
-  font-size: 18px;
-  text-align: center;
-  max-width: 600px;
-  color: ${({ theme }) => theme.text_secondary};
-  @media (max-width: 768px) {
-    font-size: 16px;
-  }
-`;
 
 const Experience = () => {
   const { language } = useLanguage();
@@ -56,16 +11,17 @@ const Experience = () => {
   const experienceData = language === "mn" ? experiencesMn : experiences;
 
   return (
-    <Container id="Experience">
-      <Wrapper>
-        <Title>{text.title}</Title>
-        <Desc
-          style={{
-            marginBottom: "40px",
-          }}
-        >
+    <div
+      id="Experience"
+      className="flex flex-col justify-center relative z-10 items-center mt-[50px]"
+    >
+      <div className="relative flex justify-between items-center flex-col w-full max-w-[1100px] gap-[12px]">
+        <div className="text-[52px] text-center font-semibold mt-[20px] text-text_primary md:mt-[12px] md:text-[32px]">
+          {text.title}
+        </div>
+        <div className="text-[18px] text-center max-w-[600px] text-text_secondary md:text-[16px] mb-[40px]">
           {text.desc}
-        </Desc>
+        </div>
 
         <VerticalTimeline>
           {experienceData.map((experience, index) => (
@@ -75,8 +31,8 @@ const Experience = () => {
             />
           ))}
         </VerticalTimeline>
-      </Wrapper>
-    </Container>
+      </div>
+    </div>
   );
 };
 

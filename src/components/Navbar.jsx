@@ -1,225 +1,142 @@
 import React, { useState } from "react";
 import { Link as LinkR } from "react-router-dom";
-import styled, { useTheme } from "styled-components";
 import { Bio, navigation } from "../data/constants";
 import { MenuRounded } from "@mui/icons-material";
 import { useLanguage } from "../utils/LanguageContext";
-
-const Nav = styled.div`
-  background-color: ${({ theme }) => theme.bg};
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1rem;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  color: white;
-`;
-
-const NavbarContainer = styled.div`
-  width: 100%;
-  max-width: 1200px;
-  padding: 0 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 1rem;
-`;
-const NavLogo = styled(LinkR)`
-  width: 80%;
-  padding: 0 6px;
-  font-weight: 500;
-  font-size: 18px;
-  text-decoration: none;
-  color: inherit;
-`;
-
-const NavItems = styled.ul`
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 32px;
-  padding: 0 6px;
-  list-style: none;
-
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
-`;
-
-const NavLink = styled.a`
-  color: ${({ theme }) => theme.text_primary};
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-  text-decoration: none;
-  &:hover {
-    color: ${({ theme }) => theme.primary};
-  }
-`;
-
-const ButtonContainer = styled.div`
-  width: 80%;
-  height: 100%;
-  display: flex;
-  justify-content: end;
-  align-items: center;
-  padding: 0 6px;
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
-`;
-
-const GithubButton = styled.a`
-  border: 1px solid ${({ theme }) => theme.primary};
-  color: ${({ theme }) => theme.primary};
-  justify-content: center;
-  display: flex;
-  align-items: center;
-  border-radius: 20px;
-  cursor: pointer;
-  padding: 10px 20px;
-  font-size: 16px;
-  font-weight: 500;
-  transition: all 0.6s ease-in-out;
-  text-decoration: none;
-  &:hover {
-    background: ${({ theme }) => theme.primary};
-    color: ${({ theme }) => theme.text_primary};
-  }
-`;
-const LanguageButton = styled.button`
-  background: transparent;
-  border: 1px solid ${({ theme }) => theme.primary};
-  color: ${({ theme }) => theme.primary};
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50px;
-  cursor: pointer;
-  padding: 8px 16px;
-  font-size: 16px;
-  font-weight: 500;
-  margin-left: 10px;
-  transition: all 0.3s ease-in-out;
-  outline: none;
-
-  &:hover {
-    background: ${({ theme }) => theme.primary};
-    color: ${({ theme }) => theme.text_primary};
-    transform: scale(1.05);
-  }
-`;
-
-const MobileIcon = styled.div`
-  height: 100%;
-  display: flex;
-  align-items: center;
-  color: ${({ theme }) => theme.text_primary};
-  display: none;
-  @media screen and (max-width: 768px) {
-    display: block;
-  }
-`;
-
-const MobileMenu = styled.ul`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  gap: 16px;
-
-  padding: 0 6px;
-  list-style: none;
-  width: 100%;
-  padding: 12px 40px 24px 40px;
-  background: ${({ theme }) => theme.card_light + 99};
-  position: absolute;
-  top: 80px;
-  right: 0;
-
-  transition: all 0.6s ease-in-out;
-  transform: ${({ isOpen }) =>
-    isOpen ? "translateY(0)" : "translateY(-100%)"};
-  border-radius: 0 0 20px 20px;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-  opacity: ${({ isOpen }) => (isOpen ? "100%" : "0")};
-  z-index: ${({ isOpen }) => (isOpen ? "1000" : "-1000")};
-`;
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { language, toggleLanguage } = useLanguage();
 
-  const theme = useTheme();
-  // Ensure we fallback to 'mn' or 'en' correctly if the key is missing (though our state handles it)
-  // Access data based on language state
   const bioData = language === "mn" ? Bio.mn : Bio;
   const navData = navigation[language] || navigation.mn;
 
   return (
-    <Nav>
-      <NavbarContainer>
-        <NavLogo to="/">My Portfolio</NavLogo>
+    <div className="bg-bg h-[80px] flex items-center justify-center text-[1rem] sticky top-0 z-10 text-white">
+      <div className="w-full max-w-[1200px] px-6 flex items-center justify-between text-[1rem]">
+        <LinkR
+          to="/"
+          className="w-[80%] px-[6px] font-medium text-[18px] no-underline text-inherit cursor-pointer flex items-center"
+        >
+          My Portfolio
+        </LinkR>
 
-        <MobileIcon onClick={() => setIsOpen(!isOpen)}>
+        <div
+          className="h-full flex items-center text-text_primary md:hidden cursor-pointer"
+          onClick={() => setIsOpen(!isOpen)}
+        >
           <MenuRounded style={{ color: "inherit" }} />
-        </MobileIcon>
+        </div>
 
-        <NavItems>
-          <NavLink href="#About">{navData.about}</NavLink>
-          <NavLink href="#Skills">{navData.skills}</NavLink>
-          <NavLink href="#Experience">{navData.experience}</NavLink>
-          <NavLink href="#Projects">{navData.projects}</NavLink>
-          <NavLink href="#Education">{navData.education}</NavLink>
-        </NavItems>
+        <ul className="w-full hidden md:flex items-center justify-center gap-[32px] px-[6px] list-none">
+          <a
+            href="#About"
+            className="text-text_primary font-medium cursor-pointer transition-all duration-200 ease-in-out no-underline hover:text-primary"
+          >
+            {navData.about}
+          </a>
+          <a
+            href="#Skills"
+            className="text-text_primary font-medium cursor-pointer transition-all duration-200 ease-in-out no-underline hover:text-primary"
+          >
+            {navData.skills}
+          </a>
+          <a
+            href="#Experience"
+            className="text-text_primary font-medium cursor-pointer transition-all duration-200 ease-in-out no-underline hover:text-primary"
+          >
+            {navData.experience}
+          </a>
+          <a
+            href="#Projects"
+            className="text-text_primary font-medium cursor-pointer transition-all duration-200 ease-in-out no-underline hover:text-primary"
+          >
+            {navData.projects}
+          </a>
+          <a
+            href="#Education"
+            className="text-text_primary font-medium cursor-pointer transition-all duration-200 ease-in-out no-underline hover:text-primary"
+          >
+            {navData.education}
+          </a>
+        </ul>
 
+        <div className="w-[80%] h-full hidden md:flex justify-end items-center px-[6px]">
+          <a
+            href={bioData.github}
+            target="_Blank"
+            className="border border-primary text-primary flex justify-center items-center rounded-[20px] cursor-pointer px-[20px] py-[10px] text-[16px] font-medium transition-all duration-500 ease-in-out no-underline hover:bg-primary hover:text-text_primary"
+          >
+            {navData.github}
+          </a>
+          <button
+            onClick={toggleLanguage}
+            className="bg-transparent border border-primary text-primary flex items-center justify-center rounded-[50px] cursor-pointer px-[16px] py-[8px] text-[16px] font-medium ml-[10px] transition-all duration-300 ease-in-out outline-none hover:bg-primary hover:text-text_primary hover:scale-105"
+          >
+            {language === "mn" ? "🇲🇳 MN" : "🇺🇸 EN"}
+          </button>
+        </div>
+
+        {/* Mobile Menu */}
         {isOpen && (
-          <MobileMenu isOpen={isOpen}>
-            <NavLink onClick={() => setIsOpen(!isOpen)} href="#About">
+          <ul
+            className={`w-full flex flex-col items-start gap-[16px] px-[40px] pt-[12px] pb-[24px] bg-[#19192499] absolute top-[80px] right-0 transition-all duration-600 ease-in-out rounded-b-[20px] shadow-[0_0_10px_0_rgba(0,0,0,0.2)] ${isOpen
+                ? "translate-y-0 opacity-100 z-[1000]"
+                : "-translate-y-full opacity-0 -z-[1000]"
+              }`}
+          >
+            <a
+              onClick={() => setIsOpen(!isOpen)}
+              href="#About"
+              className="text-text_primary font-medium cursor-pointer transition-all duration-200 ease-in-out no-underline hover:text-primary"
+            >
               {navData.about}
-            </NavLink>
-            <NavLink onClick={() => setIsOpen(!isOpen)} href="#Skills">
+            </a>
+            <a
+              onClick={() => setIsOpen(!isOpen)}
+              href="#Skills"
+              className="text-text_primary font-medium cursor-pointer transition-all duration-200 ease-in-out no-underline hover:text-primary"
+            >
               {navData.skills}
-            </NavLink>
-            <NavLink onClick={() => setIsOpen(!isOpen)} href="#Experience">
+            </a>
+            <a
+              onClick={() => setIsOpen(!isOpen)}
+              href="#Experience"
+              className="text-text_primary font-medium cursor-pointer transition-all duration-200 ease-in-out no-underline hover:text-primary"
+            >
               {navData.experience}
-            </NavLink>
-            <NavLink onClick={() => setIsOpen(!isOpen)} href="#Projects">
+            </a>
+            <a
+              onClick={() => setIsOpen(!isOpen)}
+              href="#Projects"
+              className="text-text_primary font-medium cursor-pointer transition-all duration-200 ease-in-out no-underline hover:text-primary"
+            >
               {navData.projects}
-            </NavLink>
-            <NavLink onClick={() => setIsOpen(!isOpen)} href="#Education">
+            </a>
+            <a
+              onClick={() => setIsOpen(!isOpen)}
+              href="#Education"
+              className="text-text_primary font-medium cursor-pointer transition-all duration-200 ease-in-out no-underline hover:text-primary"
+            >
               {navData.education}
-            </NavLink>
-            <GithubButton
+            </a>
+            <a
               href={bioData.github}
               target="_Blank"
-              style={{
-                background: theme.primary,
-                color: theme.text_primary,
-              }}
+              className="bg-primary text-text_primary flex justify-center items-center rounded-[20px] cursor-pointer px-[20px] py-[10px] text-[16px] font-medium transition-all duration-500 ease-in-out no-underline hover:bg-primary hover:text-text_primary"
             >
               {navData.github}
-            </GithubButton>
-            <LanguageButton onClick={toggleLanguage} style={{ margin: 0, marginTop: '10px' }}>
+            </a>
+            <button
+              onClick={toggleLanguage}
+              className="bg-transparent border border-primary text-primary flex items-center justify-center rounded-[50px] cursor-pointer px-[16px] py-[8px] text-[16px] font-medium mt-[10px] transition-all duration-300 ease-in-out outline-none hover:bg-primary hover:text-text_primary hover:scale-105"
+            >
               {language === "mn" ? "🇲🇳 MN" : "🇺🇸 EN"}
-            </LanguageButton>
-          </MobileMenu>
+            </button>
+          </ul>
         )}
-
-        <ButtonContainer>
-          <GithubButton href={bioData.github} target="_Blank">
-            {navData.github}
-          </GithubButton>
-          <LanguageButton onClick={toggleLanguage}>
-            {language === "mn" ? "🇲🇳 MN" : "🇺🇸 EN"}
-          </LanguageButton>
-        </ButtonContainer>
-      </NavbarContainer>
-    </Nav>
+      </div>
+    </div>
   );
 };
 

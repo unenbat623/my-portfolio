@@ -8,6 +8,10 @@
   font-family: "Poppins", sans-serif;
 }
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   margin: 0px !important;
   padding: 0;

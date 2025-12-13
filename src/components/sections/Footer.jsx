@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 import { Bio, navigation, staticText } from "../../data/constants";
 import { useLanguage } from "../../utils/LanguageContext";
 import {
@@ -9,78 +8,6 @@ import {
   Twitter,
 } from "@mui/icons-material";
 
-const FooterContainer = styled.div`
-  width: 100%;
-  padding: 2rem 0;
-  display: flex;
-  justify-content: center;
-  z-index: 10;
-  position: relative;
-`;
-const FooterWrapper = styled.div`
-  width: 100%;
-  max-width: 1200px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  align-items: center;
-  padding: 1rem;
-  color: ${({ theme }) => theme.text_primary};
-`;
-const Logo = styled.div`
-  font-weight: 600;
-  font-size: 20px;
-  color: ${({ theme }) => theme.primary};
-`;
-const Nav = styled.ul`
-  width: 100%;
-  max-width: 800px;
-  margin-top: 0.5rem;
-  display: flex;
-  flex-direction: row;
-  gap: 2rem;
-  justify-content: center;
-  @media (max-width: 768px) {
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
-    text-align: center;
-    font-size: 12px;
-  }
-`;
-const NavLink = styled.a`
-  color: ${({ theme }) => theme.text_primary};
-  text-decoration: none;
-  font-size: 1.2rem;
-  transition: color 0.2s ease-in-out;
-  &:hover {
-    color: ${({ theme }) => theme.primary};
-  }
-  @media (max-width: 768px) {
-    font-size: 1rem;
-  }
-`;
-const SocialMediaIcons = styled.div`
-  display: flex;
-  margin-top: 1rem;
-`;
-const SocialMediaIcon = styled.a`
-  display: inline-block;
-  margin: 0 1rem;
-  font-size: 1.5rem;
-  color: ${({ theme }) => theme.text_primary};
-  transition: color 0.2s ease-in-out;
-  &:hover {
-    color: ${({ theme }) => theme.primary};
-  }
-`;
-const Copyright = styled.p`
-  margin-top: 1.5rem;
-  font-size: 0.9rem;
-  color: ${({ theme }) => theme.soft2};
-  text-align: center;
-`;
-
 const Footer = () => {
   const { language } = useLanguage();
   const bioData = language === "mn" ? Bio.mn : Bio;
@@ -88,33 +15,78 @@ const Footer = () => {
   const text = staticText[language].footer;
 
   return (
-    <FooterContainer>
-      <FooterWrapper>
-        <Logo>{bioData.name}</Logo>
-        <Nav>
-          <NavLink href="#About">{navData.about}</NavLink>
-          <NavLink href="#Skills">{navData.skills}</NavLink>
-          <NavLink href="#Experience">{navData.experience}</NavLink>
-          <NavLink href="#Projects">{navData.projects}</NavLink>
-          <NavLink href="#Education">{navData.education}</NavLink>
-        </Nav>
-        <SocialMediaIcons>
-          <SocialMediaIcon href={Bio.facebook} target="display">
+    <div className="w-full py-[2rem] flex justify-center z-10 relative">
+      <div className="w-full max-w-[1200px] flex flex-col gap-[14px] items-center p-[1rem] text-text_primary">
+        <div className="font-semibold text-[20px] text-primary">
+          {bioData.name}
+        </div>
+        <ul className="w-full max-w-[800px] mt-[0.5rem] flex flex-row gap-[2rem] justify-center md:flex-wrap md:gap-[1rem] md:justify-center md:text-center md:text-[12px]">
+          <a
+            href="#About"
+            className="text-text_primary no-underline text-[1.2rem] transition-colors duration-200 ease-in-out hover:text-primary md:text-[1rem]"
+          >
+            {navData.about}
+          </a>
+          <a
+            href="#Skills"
+            className="text-text_primary no-underline text-[1.2rem] transition-colors duration-200 ease-in-out hover:text-primary md:text-[1rem]"
+          >
+            {navData.skills}
+          </a>
+          <a
+            href="#Experience"
+            className="text-text_primary no-underline text-[1.2rem] transition-colors duration-200 ease-in-out hover:text-primary md:text-[1rem]"
+          >
+            {navData.experience}
+          </a>
+          <a
+            href="#Projects"
+            className="text-text_primary no-underline text-[1.2rem] transition-colors duration-200 ease-in-out hover:text-primary md:text-[1rem]"
+          >
+            {navData.projects}
+          </a>
+          <a
+            href="#Education"
+            className="text-text_primary no-underline text-[1.2rem] transition-colors duration-200 ease-in-out hover:text-primary md:text-[1rem]"
+          >
+            {navData.education}
+          </a>
+        </ul>
+        <div className="flex mt-[1rem]">
+          <a
+            href={Bio.facebook}
+            target="display"
+            className="inline-block mx-[1rem] text-[1.5rem] text-text_primary transition-colors duration-200 ease-in-out hover:text-primary"
+          >
             <FacebookRounded />
-          </SocialMediaIcon>
-          <SocialMediaIcon href={Bio.twitter} target="display">
+          </a>
+          <a
+            href={Bio.twitter}
+            target="display"
+            className="inline-block mx-[1rem] text-[1.5rem] text-text_primary transition-colors duration-200 ease-in-out hover:text-primary"
+          >
             <Twitter />
-          </SocialMediaIcon>
-          <SocialMediaIcon href={Bio.linkedin} target="display">
+          </a>
+          <a
+            href={Bio.linkedin}
+            target="display"
+            className="inline-block mx-[1rem] text-[1.5rem] text-text_primary transition-colors duration-200 ease-in-out hover:text-primary"
+          >
             <LinkedIn />
-          </SocialMediaIcon>
-          <SocialMediaIcon href={Bio.insta} target="display">
+          </a>
+          <a
+            href={Bio.insta}
+            target="display"
+            className="inline-block mx-[1rem] text-[1.5rem] text-text_primary transition-colors duration-200 ease-in-out hover:text-primary"
+          >
             <Instagram />
-          </SocialMediaIcon>
-        </SocialMediaIcons>
-        <Copyright>&copy; 2024 {bioData.name}. {text.rights}</Copyright>
-      </FooterWrapper>
-    </FooterContainer>
+          </a>
+        </div>
+        <p className="mt-[1.5rem] text-[0.9rem] text-text_secondary text-center">
+          &copy; 2024 {bioData.name}. {text.rights}
+        </p>
+      </div>
+    </div>
   );
 };
 

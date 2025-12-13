@@ -1,5 +1,3 @@
-import styled, { ThemeProvider } from "styled-components";
-import { darkTheme } from "./utils/Themes";
 import Navbar from "./components/Navbar";
 import { LanguageProvider } from "./utils/LanguageContext";
 import { BrowserRouter } from "react-router-dom";
@@ -12,36 +10,26 @@ import Projects from "./components/sections/Projects";
 import Contact from "./components/sections/Contact";
 import Footer from "./components/sections/Footer";
 
-const Body = styled.div`
-  background-color: ${({ theme }) => theme.bg};
-  width: 100%;
-  overflow-x: hidden;
-  position: relative;
-`;
-
-
-
 function App() {
   return (
-    <ThemeProvider theme={darkTheme}>
-      <LanguageProvider>
-        <BrowserRouter>
-          <Body>
-            <StartCanvas />
-            <Navbar />
-            <div>
-              <Hero />
-              <Skills />
-              <Experience />
-              <Projects />
-              <Education />
-              <Contact />
-              <Footer />
-            </div>
-          </Body>
-        </BrowserRouter>
-      </LanguageProvider>
-    </ThemeProvider>
+    <LanguageProvider>
+      <BrowserRouter>
+        <div className="bg-bg w-full overflow-x-hidden relative">
+          <StartCanvas />
+          <Navbar />
+
+          <div>
+            <Hero />
+            <Skills />
+            <Experience />
+            <Projects />
+            <Education />
+            <Contact />
+            <Footer />
+          </div>
+        </div>
+      </BrowserRouter>
+    </LanguageProvider>
   );
 }
 
