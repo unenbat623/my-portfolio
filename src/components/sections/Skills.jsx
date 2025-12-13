@@ -1,13 +1,14 @@
 import React from "react";
 import styled from "styled-components";
-import { skills } from "../../data/constants";
+import { skills, staticText } from "../../data/constants";
 import { Tilt } from "react-tilt";
+import { useLanguage } from "../../utils/LanguageContext";
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  justify-contnet: center;
-  position: rlative;
+  justify-content: center;
+  position: relative;
   z-index: 1;
   align-items: center;
 `;
@@ -25,8 +26,8 @@ const Wrapper = styled.div`
     flex-direction: column;
   }
 `;
-const Title = styled.div`
-  font-size: 52px;
+export const Title = styled.div`
+  font-size: 42px;
   text-align: center;
   font-weight: 600;
   margin-top: 20px;
@@ -36,10 +37,10 @@ const Title = styled.div`
     font-size: 32px;
   }
 `;
-const Desc = styled.div`
+export const Desc = styled.div`
   font-size: 18px;
   text-align: center;
-  font-weight: 600;
+  max-width: 600px;
   color: ${({ theme }) => theme.text_secondary};
   @media (max-width: 768px) {
     font-size: 16px;
@@ -112,17 +113,19 @@ const SkillItem = styled.div`
 `;
 
 const Skills = () => {
+  const { language } = useLanguage();
+  const text = staticText[language].skills;
+
   return (
     <Container id="Skills">
       <Wrapper>
-        <Title>Skills</Title>
+        <Title>{text.title}</Title>
         <Desc
           style={{
             marginBottom: "40px",
           }}
         >
-          Here are some of my skills on which I have been working on for the
-          past 1 years.
+          {text.desc}
         </Desc>
 
         <SkillsContainer>

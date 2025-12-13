@@ -1,9 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { Bio } from "../../data/constants";
+import { Bio, staticText } from "../../data/constants";
 import Typewriter from "typewriter-effect";
 import HeroImg from "../../images/HeroImage.jpg";
 import HeroBgAnimation from "../HeroBgAnimation";
+import { useLanguage } from "../../utils/LanguageContext";
 import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
 import {
@@ -216,6 +217,10 @@ const HeroBg = styled.div`
 `;
 
 const Hero = () => {
+  const { language } = useLanguage();
+  const bioData = language === "mn" ? Bio.mn : Bio;
+  const heroText = staticText[language].hero;
+
   return (
     <div id="About">
       <HeroContainer>
@@ -229,14 +234,14 @@ const Hero = () => {
             <HeroLeftContainer>
               <motion.div {...headTextAnimation}>
                 <Title>
-                  Hi, I am <br /> {Bio.name}
+                  {heroText.hi} <br /> {bioData.name}
                 </Title>
                 <TextLoop>
-                  I am a
+                  {heroText.iam}
                   <Span>
                     <Typewriter
                       options={{
-                        strings: Bio.roles,
+                        strings: bioData.roles,
                         autoStart: true,
                         loop: true,
                       }}
@@ -246,11 +251,11 @@ const Hero = () => {
               </motion.div>
 
               <motion.div {...headContentAnimation}>
-                <SubTitle>{Bio.description}</SubTitle>
+                <SubTitle>{bioData.description}</SubTitle>
               </motion.div>
 
-              <ResumeButton href={Bio.resume} target="_blank">
-                Check Resume
+              <ResumeButton href={bioData.resume} target="_blank">
+                {heroText.checkResume}
               </ResumeButton>
             </HeroLeftContainer>
             <HeroRightContainer>

@@ -57,7 +57,6 @@ const Description = styled.div`
     font-size: 12px;
   }
 `;
-
 const Grade = styled.div`
   font-size: 14px;
   font-weight: 500;

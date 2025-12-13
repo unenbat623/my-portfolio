@@ -2,15 +2,16 @@ import React from "react";
 import { VerticalTimeline } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import styled from "styled-components";
-import { experiences } from "../../data/constants";
+import { experiences, experiencesMn, staticText } from "../../data/constants";
 import ExperienceCard from "../cards/ExperienceCard";
+import { useLanguage } from "../../utils/LanguageContext";
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  justify-contnet: center;
+  justify-content: center;
   margin-top: 50px;
-  position: rlative;
+  position: relative;
   z-index: 1;
   align-items: center;
 `;
@@ -28,7 +29,7 @@ const Wrapper = styled.div`
     flex-direction: column;
   }
 `;
-const Title = styled.div`
+export const Title = styled.div`
   font-size: 52px;
   text-align: center;
   font-weight: 600;
@@ -39,10 +40,10 @@ const Title = styled.div`
     font-size: 32px;
   }
 `;
-const Desc = styled.div`
+export const Desc = styled.div`
   font-size: 18px;
   text-align: center;
-  font-weight: 600;
+  max-width: 600px;
   color: ${({ theme }) => theme.text_secondary};
   @media (max-width: 768px) {
     font-size: 16px;
@@ -50,21 +51,24 @@ const Desc = styled.div`
 `;
 
 const Experience = () => {
+  const { language } = useLanguage();
+  const text = staticText[language].experience;
+  const experienceData = language === "mn" ? experiencesMn : experiences;
+
   return (
     <Container id="Experience">
       <Wrapper>
-        <Title>Experience</Title>
+        <Title>{text.title}</Title>
         <Desc
           style={{
             marginBottom: "40px",
           }}
         >
-          🚀 My work experience as a software engineer and working on different
-          companies and projects. 🚀
+          {text.desc}
         </Desc>
 
         <VerticalTimeline>
-          {experiences.map((experience, index) => (
+          {experienceData.map((experience, index) => (
             <ExperienceCard
               key={`experience-${index}`}
               experience={experience}

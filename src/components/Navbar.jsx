@@ -3,6 +3,7 @@ import { Link as LinkR } from "react-router-dom";
 import styled, { useTheme } from "styled-components";
 import { Bio, navigation } from "../data/constants";
 import { MenuRounded } from "@mui/icons-material";
+import { useLanguage } from "../utils/LanguageContext";
 
 const Nav = styled.div`
   background-color: ${({ theme }) => theme.bg};
@@ -151,18 +152,13 @@ const MobileMenu = styled.ul`
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [language, setLanguage] = useState("mn"); // Default to Mongolian as per previous preference
+  const { language, toggleLanguage } = useLanguage();
 
   const theme = useTheme();
   // Ensure we fallback to 'mn' or 'en' correctly if the key is missing (though our state handles it)
   // Access data based on language state
   const bioData = language === "mn" ? Bio.mn : Bio;
   const navData = navigation[language] || navigation.mn;
-
-  // Function to toggle language
-  const toggleLanguage = () => {
-    setLanguage((prev) => (prev === "mn" ? "en" : "mn"));
-  };
 
   return (
     <Nav>
@@ -208,7 +204,6 @@ const Navbar = () => {
             >
               {navData.github}
             </GithubButton>
-            {/* Added Language Toggle for Mobile Menu as well for better UX */}
             <LanguageButton onClick={toggleLanguage} style={{ margin: 0, marginTop: '10px' }}>
               {language === "mn" ? "🇲🇳 MN" : "🇺🇸 EN"}
             </LanguageButton>

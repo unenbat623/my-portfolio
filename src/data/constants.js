@@ -44,6 +44,185 @@ export const navigation = {
   },
 };
 
+export const staticText = {
+  en: {
+    hero: {
+      hi: "Hi, I am",
+      iam: "I am a",
+      checkResume: "Check Resume",
+    },
+    skills: {
+      title: "Skills",
+      desc: "Here are some of my skills on which I have been working on for the past 2 years.",
+    },
+    experience: {
+      title: "Experience",
+      desc: "My work experience as a software engineer and working on different companies and projects.",
+    },
+    projects: {
+      title: "Projects",
+      desc: "I have worked on a wide range of projects. From web apps to android apps. Here are some of my projects.",
+    },
+    education: {
+      title: "Education",
+      desc: "My education has been a journey of self-discovery and growth. My educational details are as follows.",
+    },
+    contact: {
+      title: "Contact",
+      desc: "Feel free to reach out to me for any questions or opportunities!",
+      email: "Email",
+      name: "Your Name",
+      subject: "Subject",
+      message: "Message",
+      send: "Send",
+    },
+    footer: {
+      rights: "All rights reserved.",
+    },
+  },
+  mn: {
+    hero: {
+      hi: "Сайн байна уу, намайг",
+      iam: "Би бол",
+      checkResume: "Анкет үзэх",
+    },
+    skills: {
+      title: "Ур чадвар",
+      desc: "Сүүлийн 2 жилийн хугацаанд миний сурч мэдсэн, ажилласан зарим ур чадварууд.",
+    },
+    experience: {
+      title: "Туршлага",
+      desc: "Програм хангамжийн инженерээр ажилласан болон янз бүрийн компани, төслүүдэд ажилласан туршлага.",
+    },
+    projects: {
+      title: "Төслүүд",
+      desc: "Би олон төрлийн төслүүд дээр ажилласан. Веб аппликейшнээс эхлээд Android аппликейшн хүртэл. Миний зарим төслүүд энд байна.",
+    },
+    education: {
+      title: "Боловсрол",
+      desc: "Миний боловсрол бол өөрийгөө нээх, өсч хөгжих аялал байлаа. Миний боловсролын дэлгэрэнгүй мэдээлэл.",
+    },
+    contact: {
+      title: "Холбоо барих",
+      desc: "Асуулт, боломжуудын талаар надтай чөлөөтэй холбогдоорой!",
+      email: "Имэйл",
+      name: "Таны нэр",
+      subject: "Гарчиг",
+      message: "Зурвас",
+      send: "Илгээх",
+    },
+    footer: {
+      rights: "Бүх эрх хуулиар хамгаалагдсан.",
+    },
+  },
+};
+
+// Mongolian Data Variants (Duplicated structure, translated where possible/obvious, otherwise kept EN for specific tech terms)
+export const experiencesMn = [
+  {
+    id: 0,
+    img: "https://yt3.googleusercontent.com/eQSLrYh7Bh0VbjIsh4T9auqgBgIIqtrtMcTpw7TEmCA0yb-PKg7YTsnLrYYsEmYgnJ-MOKzSqw=s176-c-k-c0x00ffffff-no-rj",
+    role: "Full-stack хөгжүүлэгч",
+    company: "Pinecone",
+    date: "2024 оны 6 сар - 2024 оны 11 сар",
+    desc: "Neurobit PSG & Hybrid, Portals дээрх хэрэглэгчийн туршлагыг сайжруулж, алдааг засч, ачаалах хугацааг 40%-иар бууруулсан. React Query-ээр оновчтой болгосон AXIOS ашиглан REST API-тай тасралтгүй харилцан үйлчилдэг React Js ашиглан Neurobit Analytics портыг бүтээсэн.",
+    skills: [
+      "ReactJS",
+      "Grapql",
+      "NodeJs",
+      "cypress",
+      "jest",
+      "tailwind.css",
+      "JavaScript",
+    ],
+    doc: "https://firebasestorage.googleapis.com/v0/b/flexi-coding.appspot.com/o/Screenshot%20from%202024-01-25%2022-38-31.png?alt=media&token=2785903f-1a4e-41f5-afd2-6adcfe56d058",
+  },
+];
+
+export const educationMn = [
+  {
+    id: 0,
+    img: "https://tse3.mm.bing.net/th?id=OIP.54Qil8lVkZ33ttRVl_i7XwAAAA&pid=Api&P=0&h=220",
+    school: "Нийслэлийн ерөнхий боловсролын 1-р сургууль",
+    date: "2011 оны 10 сар - 2023 оны 9 сар",
+    grade: "93.2 ",
+    desc: "Би одоогоор Бхубанешвар дахь Калинга аж үйлдвэрийн технологийн дээд сургуульд Компьютерийн шинжлэх ухаан, инженерчлэлийн чиглэлээр бакалаврын зэрэг хамгаалж байна. Би 4 семестрийг дүүргэсэн бөгөөд голч оноо 8.71 байна.",
+    degree: "Ахлах сургууль",
+  },
+  {
+    id: 1,
+    img: "https://yt3.googleusercontent.com/eQSLrYh7Bh0VbjIsh4T9auqgBgIIqtrtMcTpw7TEmCA0yb-PKg7YTsnLrYYsEmYgnJ-MOKzSqw=s176-c-k-c0x00ffffff-no-rj",
+    school: "Pinecone Академи",
+    date: "2023 оны 10 сар - 2024 оны 9 сар",
+    grade: "гэрчилгээ",
+    desc: "Би одоогоор Бхубанешвар дахь Калинга аж үйлдвэрийн технологийн дээд сургуульд Компьютерийн шинжлэх ухаан, инженерчлэлийн чиглэлээр бакалаврын зэрэг хамгаалж байна. Би 4 семестрийг дүүргэсэн бөгөөд голч оноо 8.71 байна.",
+    degree: "Pinecone Академи Summer Leap",
+  },
+];
+
+export const projectsMn = [
+  {
+    id: 0,
+    title: "Graphql TODO",
+    date: "2024 оны 1 сар - 2024 оны 3 сар",
+    description:
+      "Загварын нарийвчлалыг сайжруулахын тулд өгөгдлийн багцыг урьдчилан боловсруулж, нэмэгдүүлсэн, загварыг сургасан, загвар болон Typescript ашиглан API үүсгэсэн, мөн төслийн frontend болон backend-д React вэб програмыг ашигласан. Амжилт: Эмнэлгийн зурагнаас тархины хавдрыг үнэн зөв илрүүлэх 95.7%-ийн нарийвчлалд хүрсэн.",
+    image:
+      "https://github.com/unenbat623/Brain-Tumor-Detection/raw/main/Readme_resource/Image2.png",
+    tags: ["typescript", "Graphql", "React"],
+    category: "machine learning",
+    github: "https://github.com/unenbat623/",
+    webapp: "https://brain-tumor.netlify.app/",
+    member: [
+      {
+        name: "Б. Өнөнбат",
+        img: "https://scontent.fuln2-2.fna.fbcdn.net/v/t39.30808-6/415590667_333489336309354_4681630647101831769_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=5f2048&_nc_ohc=YGzvt1HiDOkQ7kNvgFQWPFC&_nc_ht=scontent.fuln2-2.fna&oh=00_AfDB0dNACIAQ4iNWmAXsu5on2Pt7ikFtW-1mgPUSVniRqw&oe=66412742",
+        linkedin: "https://www.linkedin.com/in/b-unenbat-7a4b7823b/",
+        github: "https://github.com/unenbat623/",
+      },
+    ],
+  },
+  {
+    id: 1,
+    title: "Central Cinema website",
+    date: "2021 оны 6 сар",
+    description:
+      "React JS, Headless UI болон Material UI ашиглан хийсэн Central Cinema вэбсайт. Хэрэглэгчид Google хаягаараа нэвтэрч болох нэвтрэх хуудастай. Бүх даалгаврыг харж, шинэ даалгавар үүсгэх боломжтой хажуугийн цэстэй. Responsive загвартай. Хэрэглэгчид тодорхой өдөр бүх даалгаврыг харах боломжтой хуанлитай.",
+    image:
+      "https://camo.githubusercontent.com/84ac6ab6f378348ef28d8184062b7e9e3511a1252ae3966eaa49e8e998f732a7/68747470733a2f2f666972656261736573746f726167652e676f6f676c65617069732e636f6d2f76302f622f746f646f2d6170702d63386331392e61707073706f742e636f6d2f6f2f53637265656e73686f74253230283938292e706e673f616c743d6d6564696126746f6b656e3d33643335646366322d626666322d343730382d393031632d343232383866383332386633",
+    tags: ["React Js", "Typescript", "Node JS"],
+    category: "web site, web app",
+    github: "https://github.com/unenbat623/Todo-Web-App",
+    webapp: "https://rishav-react-todo.netlify.app/",
+  },
+  {
+    id: 2,
+    title: "Food_Delvivery",
+    date: "2024 оны 6 сар-",
+    description:
+      "React JS болон Material UI ашиглан хийсэн Food_Delvivery вэб програм. Хэрэглэгчид Google хаягаараа нэвтэрч болох нэвтрэх хуудастай. Бүх даалгаврыг харж, шинэ даалгавар үүсгэх боломжтой хажуугийн цэстэй. Хэрэглэгчид тодорхой өдөр бүх даалгаврыг харах боломжтой хуанлитай.",
+    image:
+      "https://camo.githubusercontent.com/84ac6ab6f378348ef28d8184062b7e9e3511a1252ae3966eaa49e8e998f732a7/68747470733a2f2f666972656261736573746f726167652e676f6f676c65617069732e636f6d2f76302f622f746f646f2d6170702d63386331392e61707073706f742e636f6d2f6f2f53637265656e73686f74253230283938292e706e673f616c743d6d6564696126746f6b656e3d33643335646366322d626666322d343730382d393031632d343232383866383332386633",
+    tags: ["React Js", "Typescript", "Node JS", ""],
+    category: "web site",
+    github: "https://github.com/unenbat623/Todo-Web-App",
+    webapp: "https://rishav-react-todo.netlify.app/",
+  },
+  {
+    id: 3,
+    title: "GELD",
+    date: "2024 оны 6 сар-",
+    description:
+      "React JS болон Material UI ашиглан хийсэн GELD вэб програм. Хэрэглэгчид Google хаягаараа нэвтэрч болох нэвтрэх хуудастай. Бүх даалгаврыг харж, шинэ даалгавар үүсгэх боломжтой хажуугийн цэстэй. Хэрэглэгчид тодорхой өдөр бүх даалгаврыг харах боломжтой хуанлитай.",
+    image:
+      "https://camo.githubusercontent.com/84ac6ab6f378348ef28d8184062b7e9e3511a1252ae3966eaa49e8e998f732a7/68747470733a2f2f666972656261736573746f726167652e676f6f676c65617069732e636f6d2f76302f622f746f646f2d6170702d63386331392e61707073706f742e636f6d2f6f2f53637265656e73686f74253230283938292e706e673f616c743d6d6564696126746f6b656e3d33643335646366322d626666322d343730382d393031632d343232383866383332386633",
+    tags: ["React Js", "Typescript", "Node JS", ""],
+    category: "web app",
+    github: "https://github.com/unenbat623/Todo-Web-App",
+    webapp: "https://rishav-react-todo.netlify.app/",
+  },
+];
+
 export const skills = [
   {
     title: "Frontend",

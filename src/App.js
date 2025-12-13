@@ -1,6 +1,7 @@
 import styled, { ThemeProvider } from "styled-components";
 import { darkTheme } from "./utils/Themes";
 import Navbar from "./components/Navbar";
+import { LanguageProvider } from "./utils/LanguageContext";
 import { BrowserRouter } from "react-router-dom";
 import Hero from "./components/sections/Hero";
 import Skills from "./components/sections/Skills";
@@ -18,24 +19,28 @@ const Body = styled.div`
   position: relative;
 `;
 
+
+
 function App() {
   return (
     <ThemeProvider theme={darkTheme}>
-      <BrowserRouter>
-        <Body>
-          <StartCanvas />
-          <Navbar />
-          <div>
-            <Hero />
-            <Skills />
-            <Experience />
-            <Projects />
-            <Education />
-            <Contact />
-            <Footer />
-          </div>
-        </Body>
-      </BrowserRouter>
+      <LanguageProvider>
+        <BrowserRouter>
+          <Body>
+            <StartCanvas />
+            <Navbar />
+            <div>
+              <Hero />
+              <Skills />
+              <Experience />
+              <Projects />
+              <Education />
+              <Contact />
+              <Footer />
+            </div>
+          </Body>
+        </BrowserRouter>
+      </LanguageProvider>
     </ThemeProvider>
   );
 }

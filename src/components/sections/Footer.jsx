@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { Bio } from "../../data/constants";
+import { Bio, navigation, staticText } from "../../data/constants";
+import { useLanguage } from "../../utils/LanguageContext";
 import {
   FacebookRounded,
   Instagram,
@@ -81,16 +82,21 @@ const Copyright = styled.p`
 `;
 
 const Footer = () => {
+  const { language } = useLanguage();
+  const bioData = language === "mn" ? Bio.mn : Bio;
+  const navData = navigation[language] || navigation.mn;
+  const text = staticText[language].footer;
+
   return (
     <FooterContainer>
       <FooterWrapper>
-        <Logo>B Unenbat</Logo>
+        <Logo>{bioData.name}</Logo>
         <Nav>
-          <NavLink href="#About">About</NavLink>
-          <NavLink href="#Skills">Skills</NavLink>
-          <NavLink href="#Experience">Experience</NavLink>
-          <NavLink href="#Projects">Projects</NavLink>
-          <NavLink href="#Education">Education</NavLink>
+          <NavLink href="#About">{navData.about}</NavLink>
+          <NavLink href="#Skills">{navData.skills}</NavLink>
+          <NavLink href="#Experience">{navData.experience}</NavLink>
+          <NavLink href="#Projects">{navData.projects}</NavLink>
+          <NavLink href="#Education">{navData.education}</NavLink>
         </Nav>
         <SocialMediaIcons>
           <SocialMediaIcon href={Bio.facebook} target="display">
@@ -106,7 +112,7 @@ const Footer = () => {
             <Instagram />
           </SocialMediaIcon>
         </SocialMediaIcons>
-        <Copyright>&copy; 2024 B Unenbat. All rights reserved.</Copyright>
+        <Copyright>&copy; 2024 {bioData.name}. {text.rights}</Copyright>
       </FooterWrapper>
     </FooterContainer>
   );

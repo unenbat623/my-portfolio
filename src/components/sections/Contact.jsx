@@ -1,12 +1,14 @@
 import React, { useRef } from "react";
 import styled from "styled-components";
 import emailjs from "@emailjs/browser";
+import { staticText } from "../../data/constants";
+import { useLanguage } from "../../utils/LanguageContext";
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  justify-contnet: center;
-  position: rlative;
+  justify-content: center;
+  position: relative;
   z-index: 1;
   align-items: center;
 `;
@@ -24,7 +26,8 @@ const Wrapper = styled.div`
     flex-direction: column;
   }
 `;
-const Title = styled.div`
+
+export const Title = styled.div`
   font-size: 52px;
   text-align: center;
   font-weight: 600;
@@ -35,17 +38,18 @@ const Title = styled.div`
     font-size: 32px;
   }
 `;
-const Desc = styled.div`
+
+export const Desc = styled.div`
   font-size: 18px;
   text-align: center;
-  font-weight: 600;
+  max-width: 600px;
   color: ${({ theme }) => theme.text_secondary};
   @media (max-width: 768px) {
     font-size: 16px;
   }
 `;
 
-const ContactForm = styled.div`
+const ContactForm = styled.form`
   width: 95%;
   max-width: 600px;
   display: flex;
@@ -102,10 +106,14 @@ const ContactButton = styled.input`
   color: ${({ theme }) => theme.text_primary};
   font-size: 18px;
   font-weight: 600;
+  cursor: pointer;
 `;
 
 const Contact = () => {
+  const { language } = useLanguage();
+  const text = staticText[language].contact;
   const form = useRef();
+
   const handelSubmit = (e) => {
     e.preventDefault();
     emailjs
@@ -118,7 +126,7 @@ const Contact = () => {
       .then(
         (result) => {
           alert("Message Sent");
-          form.current.result();
+          form.current.reset();
         },
         (error) => {
           alert(error);
@@ -126,23 +134,23 @@ const Contact = () => {
       );
   };
   return (
-    <Container id="Education">
+    <Container id="Contact">
       <Wrapper>
-        <Title>Contact</Title>
+        <Title>{text.title}</Title>
         <Desc
           style={{
             marginBottom: "40px",
           }}
         >
-          🚀 Feel free to reach out to me for any questions or opportunities! 🚀
+          {text.desc}
         </Desc>
-        <ContactForm onSubmit={handelSubmit}>
-          <ContactTitle>Email Me 🚀</ContactTitle>
-          <ContactInput placeholder="Your Email" name="from_email" />
-          <ContactInput placeholder="Your Name" name="from_name" />
-          <ContactInput placeholder="Subject" name="subject" />
-          <ContactInputMessage placeholder="Message" name="message" rows={4} />
-          <ContactButton type="submit" value="Send" onClick={handelSubmit} />
+        <ContactForm ref={form} onSubmit={handelSubmit}>
+          <ContactTitle>{text.title}</ContactTitle>
+          <ContactInput placeholder={text.email} name="from_email" />
+          <ContactInput placeholder={text.name} name="from_name" />
+          <ContactInput placeholder={text.subject} name="subject" />
+          <ContactInputMessage placeholder={text.message} name="message" rows={4} />
+          <ContactButton type="submit" value={text.send} />
         </ContactForm>
       </Wrapper>
     </Container>
