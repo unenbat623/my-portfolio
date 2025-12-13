@@ -11,7 +11,7 @@ export const Bio = {
   insta: "https://www.instagram.com/unenbat_618/",
   facebook: "https://www.facebook.com/profile.php?id=100089448708671",
   mn: {
-    name: "Б. Өнөнбат",
+    name: "Б. Үнэнбат",
     roles: ["Бүтэн Stack Developer", "Программист"],
     description:
       "Би урам зоригтой, олон талт хувь хүн бөгөөд үргэлж шинэ сорилтуудыг даван туулах хүсэл эрмэлзэлтэй байдаг. Би сурах хүсэл тэмүүллээр өндөр чанартай үр дүнд хүрэхийн төлөө ажилладаг. Эерэг хандлага, өсөлтийн сэтгэлгээний хувьд би чухал хувь нэмэр оруулахад бэлэн байна. агуу зүйлд хүрэх.",
@@ -298,6 +298,14 @@ export const skills = [
         image:
           "https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg",
       },
+      {
+        name: "C++",
+        image: "https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg",
+      },
+      {
+        name: "AWS",
+        image: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg",
+      },
     ],
   },
   {
@@ -322,6 +330,22 @@ export const skills = [
         name: "Figma",
         image:
           "https://s3-alpha.figma.com/hub/file/1481185752/fa4cd070-6a79-4e1b-b079-8b9b76408595-cover.png",
+      },
+      {
+        name: "Antigravity",
+        image: "https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg",
+      },
+      {
+        name: "Cursor AI",
+        image: "https://pbs.twimg.com/profile_images/1615556272666505219/OP1w0xZ__400x400.jpg",
+      },
+      {
+        name: "Lovable AI",
+        image: "https://pbs.twimg.com/profile_images/1841974468641468416/hC6c9d0__400x400.jpg",
+      },
+      {
+        name: "Design AI",
+        image: "https://cdn-icons-png.flaticon.com/512/6062/6062646.png",
       },
     ],
   },
