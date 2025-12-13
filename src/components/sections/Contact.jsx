@@ -118,10 +118,10 @@ const Contact = () => {
     e.preventDefault();
     emailjs
       .sendForm(
-        process.env.REACT_APP_EMAILJS_SERVICE_ID,
-        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        process.env.REACT_APP_EMAILJS_SERVICE_ID || "service_5yzkdpk",
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID || "template_96rp7lr",
         form.current,
-        process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+        process.env.REACT_APP_EMAILJS_PUBLIC_KEY || "-_lzLN9RhkU57S-aA"
       )
       .then(
         (result) => {
@@ -130,7 +130,7 @@ const Contact = () => {
         },
         (error) => {
           console.error("EmailJS Error:", error);
-          alert("Failed to send message. Please try again or contact me directly via email.");
+          alert("Failed to send message: " + JSON.stringify(error));
         }
       );
   };
