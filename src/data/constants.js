@@ -25,6 +25,25 @@ export const Bio = {
   },
 };
 
+export const navigation = {
+  en: {
+    about: "About",
+    skills: "Skills",
+    experience: "Experience",
+    projects: "Projects",
+    education: "Education",
+    github: "Github Profile",
+  },
+  mn: {
+    about: "Тухай",
+    skills: "Ур чадвар",
+    experience: "Туршлага",
+    projects: "Төслүүд",
+    education: "Боловсрол",
+    github: "Github Профайл",
+  },
+};
+
 export const skills = [
   {
     title: "Frontend",

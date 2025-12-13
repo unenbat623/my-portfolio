@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link as LinkR } from "react-router-dom";
 import styled, { useTheme } from "styled-components";
-import { Bio } from "../data/constants";
+import { Bio, navigation } from "../data/constants";
 import { MenuRounded } from "@mui/icons-material";
 
 const Nav = styled.div`
@@ -90,23 +90,26 @@ const GithubButton = styled.a`
     color: ${({ theme }) => theme.text_primary};
   }
 `;
-const LanguageButton = styled.a`
+const LanguageButton = styled.button`
+  background: transparent;
   border: 1px solid ${({ theme }) => theme.primary};
   color: ${({ theme }) => theme.primary};
-  justify-content: center;
-  margin-left: 5px;
   display: flex;
   align-items: center;
-  border-radius: 20px;
+  justify-content: center;
+  border-radius: 50px;
   cursor: pointer;
-  padding: 10px 20px;
-  font-size: 19px;
+  padding: 8px 16px;
+  font-size: 16px;
   font-weight: 500;
-  transition: all 0.6s ease-in-out;
-  text-decoration: none;
+  margin-left: 10px;
+  transition: all 0.3s ease-in-out;
+  outline: none;
+
   &:hover {
     background: ${({ theme }) => theme.primary};
     color: ${({ theme }) => theme.text_primary};
+    transform: scale(1.05);
   }
 `;
 
@@ -148,13 +151,17 @@ const MobileMenu = styled.ul`
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [language, setLanguage] = useState("mn");
+  const [language, setLanguage] = useState("mn"); // Default to Mongolian as per previous preference
 
   const theme = useTheme();
-  const bioData = Bio[language] || Bio;
+  // Ensure we fallback to 'mn' or 'en' correctly if the key is missing (though our state handles it)
+  // Access data based on language state
+  const bioData = language === "mn" ? Bio.mn : Bio;
+  const navData = navigation[language] || navigation.mn;
 
-  const handleChangeLanguage = (newLanguage) => {
-    setLanguage(newLanguage);
+  // Function to toggle language
+  const toggleLanguage = () => {
+    setLanguage((prev) => (prev === "mn" ? "en" : "mn"));
   };
 
   return (
@@ -167,29 +174,29 @@ const Navbar = () => {
         </MobileIcon>
 
         <NavItems>
-          <NavLink href="#About">About</NavLink>
-          <NavLink href="#Skills">Skills</NavLink>
-          <NavLink href="#Experience">Experience</NavLink>
-          <NavLink href="#Projects">Projects</NavLink>
-          <NavLink href="#Education">Education</NavLink>
+          <NavLink href="#About">{navData.about}</NavLink>
+          <NavLink href="#Skills">{navData.skills}</NavLink>
+          <NavLink href="#Experience">{navData.experience}</NavLink>
+          <NavLink href="#Projects">{navData.projects}</NavLink>
+          <NavLink href="#Education">{navData.education}</NavLink>
         </NavItems>
 
         {isOpen && (
           <MobileMenu isOpen={isOpen}>
             <NavLink onClick={() => setIsOpen(!isOpen)} href="#About">
-              About
+              {navData.about}
             </NavLink>
             <NavLink onClick={() => setIsOpen(!isOpen)} href="#Skills">
-              Skills
+              {navData.skills}
             </NavLink>
             <NavLink onClick={() => setIsOpen(!isOpen)} href="#Experience">
-              Experience
+              {navData.experience}
             </NavLink>
             <NavLink onClick={() => setIsOpen(!isOpen)} href="#Projects">
-              Projects
+              {navData.projects}
             </NavLink>
             <NavLink onClick={() => setIsOpen(!isOpen)} href="#Education">
-              Education
+              {navData.education}
             </NavLink>
             <GithubButton
               href={bioData.github}
@@ -199,20 +206,21 @@ const Navbar = () => {
                 color: theme.text_primary,
               }}
             >
-              Github Profile
+              {navData.github}
             </GithubButton>
+            {/* Added Language Toggle for Mobile Menu as well for better UX */}
+            <LanguageButton onClick={toggleLanguage} style={{ margin: 0, marginTop: '10px' }}>
+              {language === "mn" ? "🇲🇳 MN" : "🇺🇸 EN"}
+            </LanguageButton>
           </MobileMenu>
         )}
 
         <ButtonContainer>
           <GithubButton href={bioData.github} target="_Blank">
-            Github Profile
+            {navData.github}
           </GithubButton>
-          <LanguageButton onClick={() => handleChangeLanguage("en")}>
-            <p>En</p>
-          </LanguageButton>
-          <LanguageButton onClick={() => handleChangeLanguage("mn")}>
-            <p>Mn</p>
+          <LanguageButton onClick={toggleLanguage}>
+            {language === "mn" ? "🇲🇳 MN" : "🇺🇸 EN"}
           </LanguageButton>
         </ButtonContainer>
       </NavbarContainer>
