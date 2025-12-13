@@ -324,7 +324,7 @@ export const skills = [
       {
         name: "Postman",
         image:
-          "https://static-00.iconduck.com/assets.00/postman-icon-497x512-beb7sy75.png",
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFcYJoetYqKxgVtDoFHN08qIF811Aglug-sw&s",
       },
       {
         name: "Figma",
@@ -337,15 +337,11 @@ export const skills = [
       },
       {
         name: "Cursor AI",
-        image: "https://pbs.twimg.com/profile_images/1615556272666505219/OP1w0xZ__400x400.jpg",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnQbz3c2-DSKpInXJjhhenXinyn_9fZO9Dug&s",
       },
       {
         name: "Lovable AI",
-        image: "https://pbs.twimg.com/profile_images/1841974468641468416/hC6c9d0__400x400.jpg",
-      },
-      {
-        name: "Design AI",
-        image: "https://cdn-icons-png.flaticon.com/512/6062/6062646.png",
+        image: "https://media.licdn.com/dms/image/v2/D4E0BAQG6Pv34cWmbZw/company-logo_200_200/B4EZfRRwffHIAM-/0/1751562783258/lovable_dev_logo?e=2147483647&v=beta&t=scjR7-oS-zt-QzwSTjLYJFVT_3D9TojrclHJMdTN2gU",
       },
     ],
   },

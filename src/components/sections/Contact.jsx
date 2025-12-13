@@ -118,18 +118,19 @@ const Contact = () => {
     e.preventDefault();
     emailjs
       .sendForm(
-        "service_vp2h9uj",
-        "template_96rp7lr",
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
         form.current,
-        "ltdSjBoWCA-4aRypLxsE5"
+        process.env.REACT_APP_EMAILJS_PUBLIC_KEY
       )
       .then(
         (result) => {
-          alert("Message Sent");
+          alert("Message Sent Successfully!");
           form.current.reset();
         },
         (error) => {
-          alert(error);
+          console.error("EmailJS Error:", error);
+          alert("Failed to send message. Please try again or contact me directly via email.");
         }
       );
   };
