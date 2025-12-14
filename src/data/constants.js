@@ -201,20 +201,19 @@ export const educationMn = [
 export const projectsMn = [
   {
     id: 0,
-    title: "Graphql TODO",
-    date: "2024 оны 1 сар - 2024 оны 3 сар",
+    title: "Djgeo.mn",
+    date: "2024 оны 6 сар - 2024 оны 9 сар",
     description:
       "Загварын нарийвчлалыг сайжруулахын тулд өгөгдлийн багцыг урьдчилан боловсруулж, нэмэгдүүлсэн, загварыг сургасан, загвар болон Typescript ашиглан API үүсгэсэн, мөн төслийн frontend болон backend-д React вэб програмыг ашигласан. Амжилт: Эмнэлгийн зурагнаас тархины хавдрыг үнэн зөв илрүүлэх 95.7%-ийн нарийвчлалд хүрсэн.",
     image:
-      "https://github.com/unenbat623/Brain-Tumor-Detection/raw/main/Readme_resource/Image2.png",
+      "/img/djgeo.png",
     tags: ["typescript", "Graphql", "React"],
     category: "machine learning",
-    github: "https://github.com/unenbat623/",
-    webapp: "https://brain-tumor.netlify.app/",
+    webapp: "https://www.djgeo.mn/",
     member: [
       {
         name: "Б. Үнэнбат",
-        img: "https://scontent.fuln2-2.fna.fbcdn.net/v/t39.30808-6/415590667_333489336309354_4681630647101831769_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=5f2048&_nc_ohc=YGzvt1HiDOkQ7kNvgFQWPFC&_nc_ht=scontent.fuln2-2.fna&oh=00_AfDB0dNACIAQ4iNWmAXsu5on2Pt7ikFtW-1mgPUSVniRqw&oe=66412742",
+        img: "/img/unenbat.jpg",
         linkedin: "https://www.linkedin.com/in/b-unenbat-7a4b7823b/",
         github: "https://github.com/unenbat623/",
       },
@@ -223,7 +222,7 @@ export const projectsMn = [
   {
     id: 1,
     title: "Central Cinema website",
-    date: "2021 оны 6 сар",
+    date: "2024 оны 4 сар - 2024 оны 6 сар",
     description:
       "React JS, Headless UI болон Material UI ашиглан хийсэн Central Cinema вэбсайт. Хэрэглэгчид Google хаягаараа нэвтэрч болох нэвтрэх хуудастай. Бүх даалгаврыг харж, шинэ даалгавар үүсгэх боломжтой хажуугийн цэстэй. Responsive загвартай. Хэрэглэгчид тодорхой өдөр бүх даалгаврыг харах боломжтой хуанлитай.",
     image:
@@ -235,7 +234,7 @@ export const projectsMn = [
   {
     id: 2,
     title: "Central cinema admin",
-    date: "2024 оны 6 сар-",
+    date: "2024 оны 4 сар - 2024 оны 6 сар",
     description:
       "React JS болон Material UI ашиглан хийсэн Central cinema admin вэб програм. Хэрэглэгчид Google хаягаараа нэвтэрч болох нэвтрэх хуудастай. Бүх даалгаврыг харж, шинэ даалгавар үүсгэх боломжтой хажуугийн цэстэй. Хэрэглэгчид тодорхой өдөр бүх даалгаврыг харах боломжтой хуанлитай.",
     image:
@@ -247,7 +246,43 @@ export const projectsMn = [
   {
     id: 3,
     title: "Blog web app",
-    date: "2024 оны 6 сар-",
+    date: "2023 оны 9 сар - 2023 оны 10 сар",
+    description:
+      "React JS болон Material UI ашиглан хийсэн GELD вэб програм. Хэрэглэгчид Google хаягаараа нэвтэрч болох нэвтрэх хуудастай. Бүх даалгаврыг харж, шинэ даалгавар үүсгэх боломжтой хажуугийн цэстэй. Хэрэглэгчид тодорхой өдөр бүх даалгаврыг харах боломжтой хуанлитай.",
+    image:
+      "/img/blog.png",
+    tags: ["React Js", "Typescript", "Node JS", ""],
+    category: "web app",
+    webapp: "https://team-blog-ten.vercel.app/",
+  },
+  {
+    id: 3,
+    title: "Blog web app",
+    date: "2023 оны 9 сар - 2023 оны 10 сар",
+    description:
+      "React JS болон Material UI ашиглан хийсэн GELD вэб програм. Хэрэглэгчид Google хаягаараа нэвтэрч болох нэвтрэх хуудастай. Бүх даалгаврыг харж, шинэ даалгавар үүсгэх боломжтой хажуугийн цэстэй. Хэрэглэгчид тодорхой өдөр бүх даалгаврыг харах боломжтой хуанлитай.",
+    image:
+      "/img/blog.png",
+    tags: ["React Js", "Typescript", "Node JS", ""],
+    category: "web app",
+    webapp: "https://team-blog-ten.vercel.app/",
+  },
+  {
+    id: 3,
+    title: "Blog web app",
+    date: "2023 оны 9 сар - 2023 оны 10 сар",
+    description:
+      "React JS болон Material UI ашиглан хийсэн GELD вэб програм. Хэрэглэгчид Google хаягаараа нэвтэрч болох нэвтрэх хуудастай. Бүх даалгаврыг харж, шинэ даалгавар үүсгэх боломжтой хажуугийн цэстэй. Хэрэглэгчид тодорхой өдөр бүх даалгаврыг харах боломжтой хуанлитай.",
+    image:
+      "/img/blog.png",
+    tags: ["React Js", "Typescript", "Node JS", ""],
+    category: "web app",
+    webapp: "https://team-blog-ten.vercel.app/",
+  },
+  {
+    id: 3,
+    title: "Blog web app",
+    date: "2023 оны 9 сар - 2023 оны 10 сар",
     description:
       "React JS болон Material UI ашиглан хийсэн GELD вэб програм. Хэрэглэгчид Google хаягаараа нэвтэрч болох нэвтрэх хуудастай. Бүх даалгаврыг харж, шинэ даалгавар үүсгэх боломжтой хажуугийн цэстэй. Хэрэглэгчид тодорхой өдөр бүх даалгаврыг харах боломжтой хуанлитай.",
     image:
