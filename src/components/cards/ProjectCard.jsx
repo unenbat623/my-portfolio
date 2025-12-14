@@ -34,14 +34,16 @@ const ProjectCard = ({ project }) => {
           />
         ))}
       </div>
-      <a
-        href={project.github}
-        target="_blank"
-        rel="noreferrer"
-        className="text-primary no-underline font-semibold text-center"
-      >
-        View Code
-      </a>
+      <div className="flex gap-[12px] mt-[10px]">
+        <a
+          href={project.webapp}
+          target="_blank"
+          rel="noreferrer"
+          className="w-full text-center py-[10px] bg-card text-text_primary rounded-[8px] font-semibold text-[16px] border border-primary transition-all duration-500 hover:bg-primary hover:text-white"
+        >
+          View Web App
+        </a>
+      </div>
     </div>
   );
 };

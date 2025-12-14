@@ -43,14 +43,6 @@ const Projects = () => {
           </div>
           <div className="w-[1.5px] bg-primary"></div>
           <div
-            className={`py-[8px] px-[18px] rounded-[6px] cursor-pointer hover:bg-primary/10 transition-all duration-200 ease-in-out md:py-[6px] md:px-[8px] md:rounded-[4px] ${toggle === "android app" ? "bg-primary/20" : ""
-              }`}
-            onClick={() => setToggle("android app")}
-          >
-            ANDROID APPS
-          </div>
-          <div className="w-[1.5px] bg-primary"></div>
-          <div
             className={`py-[8px] px-[18px] rounded-[6px] cursor-pointer hover:bg-primary/10 transition-all duration-200 ease-in-out md:py-[6px] md:px-[8px] md:rounded-[4px] ${toggle === "machine learning" ? "bg-primary/20" : ""
               }`}
             onClick={() => setToggle("machine learning")}
