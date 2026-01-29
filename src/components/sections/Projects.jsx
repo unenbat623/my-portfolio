@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { projects, projectsMn, staticText } from "../../data/constants";
+import { projects, projectsMn, staticText, uiText } from "../../data/constants";
 import ProjectCard from "../cards/ProjectCard";
 import { useLanguage } from "../../utils/LanguageContext";
 
@@ -7,6 +7,7 @@ const Projects = () => {
   const [toggle, setToggle] = useState("all");
   const { language } = useLanguage();
   const text = staticText[language].projects;
+  const ui = uiText[language];
   const projectData = language === "mn" ? projectsMn : projects;
 
   return (
@@ -31,7 +32,7 @@ const Projects = () => {
               }`}
             onClick={() => setToggle("all")}
           >
-            ALL
+            {ui.all}
           </div>
           <div className="w-[1.5px] bg-primary"></div>
           <div
@@ -39,7 +40,7 @@ const Projects = () => {
               }`}
             onClick={() => setToggle("web app")}
           >
-            WEB APPS
+            {ui.webApps}
           </div>
           <div className="w-[1.5px] bg-primary"></div>
           <div
@@ -47,7 +48,7 @@ const Projects = () => {
               }`}
             onClick={() => setToggle("machine learning")}
           >
-            MACHINE LEARNING
+            {ui.machineLearning}
           </div>
         </div>
 

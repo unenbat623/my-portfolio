@@ -1,7 +1,11 @@
 import React from "react";
 import { VerticalTimelineElement } from "react-vertical-timeline-component";
+import { useLanguage } from "../../utils/LanguageContext";
+import { uiText } from "../../data/constants";
 
 const ExperienceCard = ({ experience }) => {
+  const { language } = useLanguage();
+  const ui = uiText[language];
   return (
     <VerticalTimelineElement
       icon={
@@ -59,7 +63,7 @@ const ExperienceCard = ({ experience }) => {
           <>
             <br />
             <div className="w-full flex gap-[12px] mt-[-10px]">
-              <b>Skills</b>
+              <b>{ui.skills}</b>
               <div className="flex flex-wrap gap-[8px]">
                 {experience?.skills?.map((skill, index) => (
                   <div

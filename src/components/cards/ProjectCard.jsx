@@ -1,6 +1,10 @@
 import React from "react";
+import { useLanguage } from "../../utils/LanguageContext";
+import { uiText } from "../../data/constants";
 
 const ProjectCard = ({ project }) => {
+  const { language } = useLanguage();
+  const ui = uiText[language];
   return (
     <div className="w-[330px] h-[490px] bg-card cursor-pointer rounded-[10px] shadow-[0_0_12px_4px_rgba(0,0,0,0.4)] overflow-hidden py-[26px] px-[20px] flex flex-col gap-[14px] transition-all duration-500 ease-in-out hover:-translate-y-[10px] hover:shadow-[0_0_50px_4px_rgba(0,0,0,0.6)] hover:brightness-110">
       <img
@@ -41,7 +45,7 @@ const ProjectCard = ({ project }) => {
           rel="noreferrer"
           className="w-full text-center py-[10px] bg-card text-text_primary rounded-[8px] font-semibold text-[16px] border border-primary transition-all duration-500 hover:bg-primary hover:text-white"
         >
-          View Web App
+          {ui.viewWebApp}
         </a>
       </div>
     </div>

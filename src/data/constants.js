@@ -2,7 +2,7 @@ export const Bio = {
   name: "B Unenbat",
   roles: ["Full Stack Developer", "Programmer"],
   description:
-    "I am a motivated and versatile individual, always eager to take on new challenges. With a passion for learning I am dedicated to delivering high-quality results. With a positive attitude and a growth mindset, I am ready to make a meaningful contribution and achieve great things.",
+    "I am a motivated and versatile full-stack developer, passionate about building high-quality web applications and solving complex problems. With a growth mindset and a dedication to continuous learning, I strive to deliver impactful results and create meaningful digital experiences.",
   github: "https://github.com/unenbat623",
   resume:
     "https://www.figma.com/file/ommgInCjaW15chlhXWsBvl/Untitled?type=design&node-id=0-1&mode=design&t=scA8eZviRh8fuWqt-0",
@@ -11,10 +11,10 @@ export const Bio = {
   insta: "https://www.instagram.com/unenbat_618/",
   facebook: "https://www.facebook.com/profile.php?id=100089448708671",
   mn: {
-    name: "Б. Үнэнбат",
-    roles: ["Full Stack Developer", "Программист"],
+    name: "Б. Үнэнбат гэдэг",
+    roles: ["Full Stack хөгжүүлэгч", "Программист"],
     description:
-      "Би урам зоригтой, олон талт хувь хүн бөгөөд үргэлж шинэ сорилтуудыг даван туулах хүсэл эрмэлзэлтэй байдаг. Би сурах хүсэл тэмүүллээр өндөр чанартай үр дүнд хүрэхийн төлөө ажилладаг. Эерэг хандлага, өсөлтийн сэтгэлгээний хувьд би чухал хувь нэмэр оруулахад бэлэн байна. агуу зүйлд хүрэх.",
+      "Би шинэ сорилтуудыг даван туулах хүсэл эрмэлзэлтэй, тууштай хөгжүүлэгч юм. Сурах хүсэл тэмүүлэл, өсөлтийн сэтгэлгээгээр дамжуулан би чанартай үр дүнг хүргэж, агуу зүйлсийг бүтээхийн төлөө хичээн ажиллаж байна.",
     github: "https://github.com/unenbat623",
     resume:
       "https://www.figma.com/file/ommgInCjaW15chlhXWsBvl/Untitled?type=design&node-id=0-1&mode=design&t=scA8eZviRh8fuWqt-0",
@@ -42,6 +42,29 @@ export const navigation = {
     education: "Боловсрол",
     github: "Github Профайл",
   },
+};
+
+export const uiText = {
+  en: {
+    frontend: "Frontend",
+    backend: "Backend",
+    others: "Others",
+    all: "ALL",
+    webApps: "WEB APPS",
+    machineLearning: "MACHINE LEARNING",
+    viewWebApp: "View Web App",
+    skills: "Skills",
+  },
+  mn: {
+    frontend: "Фронтенд",
+    backend: "Бэкенд",
+    others: "Бусад",
+    all: "БҮГД",
+    webApps: "ВЭБ АПП",
+    machineLearning: "МАШИН СУРГАЛТ",
+    viewWebApp: "Вэб Апп Үзэх",
+    skills: "Ур чадвар",
+  }
 };
 
 export const staticText = {
@@ -84,7 +107,7 @@ export const staticText = {
     hero: {
       hi: "Сайн байна уу, намайг",
       iam: "Би бол",
-      checkResume: "Анкет үзэх",
+      checkResume: "CV Үзэх",
     },
     skills: {
       title: "Ур чадвар",
