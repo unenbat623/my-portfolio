@@ -8,12 +8,16 @@ module.exports = {
             colors: {
                 bg: "#090917",
                 bgLight: "#1C1E27",
-                primary: "#FF2400",
+                primary: "#818cf8",
                 text_primary: "#F2F3F4",
                 text_secondary: "#b1b2b3",
                 card: "#171721",
                 card_light: "#191924",
-                button: "#FF2400",
+                button: "#818cf8",
+                // Accent gradient tokens
+                accent_start: "#818cf8",
+                accent_mid: "#60a5fa",
+                accent_end: "#34d399",
             },
         },
     },

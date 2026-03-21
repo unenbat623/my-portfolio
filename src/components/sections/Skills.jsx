@@ -35,7 +35,7 @@ const Skills = () => {
           {skills.map((skill, index) => (
             <React.Fragment key={`skill-${index}`}>
               {isMobile ? (
-                <div className="w-full max-w-[500px] bg-[rgba(17,25,40,0.83)] border border-[rgba(255,255,255,0.125)] shadow-[0_4px_24px_rgba(23,92,230,0.15)] rounded-[16px] py-[18px] px-[36px] md:max-w-[400px] md:py-[10px] md:px-[36px] sm:max-w-[330px] sm:py-[10px] sm:px-[36px]">
+                <div className="w-full max-w-[500px] bg-[rgba(17,25,40,0.83)] border border-[rgba(255,255,255,0.125)] shadow-[0_4px_24px_rgba(129,140,248,0.15)] rounded-[16px] py-[18px] px-[36px] md:max-w-[400px] md:py-[10px] md:px-[36px] sm:max-w-[330px] sm:py-[10px] sm:px-[36px]">
                   <div className="text-[28px] font-semibold text-text_secondary mb-[20px] text-center">
                     {ui[skill.title.toLowerCase()] || skill.title}
                   </div>
@@ -57,7 +57,7 @@ const Skills = () => {
                 </div>
               ) : (
                 <Tilt>
-                  <div className="w-full max-w-[500px] bg-[rgba(17,25,40,0.83)] border border-[rgba(255,255,255,0.125)] shadow-[0_4px_24px_rgba(23,92,230,0.15)] rounded-[16px] py-[18px] px-[36px] md:max-w-[400px] md:py-[10px] md:px-[36px] sm:max-w-[330px] sm:py-[10px] sm:px-[36px]">
+                  <div className="w-full max-w-[500px] bg-[rgba(17,25,40,0.83)] border border-[rgba(255,255,255,0.125)] shadow-[0_4px_24px_rgba(129,140,248,0.15)] rounded-[16px] py-[18px] px-[36px] md:max-w-[400px] md:py-[10px] md:px-[36px] sm:max-w-[330px] sm:py-[10px] sm:px-[36px]">
                     <div className="text-[28px] font-semibold text-text_secondary mb-[20px] text-center">
                       {ui[skill.title.toLowerCase()] || skill.title}
                     </div>

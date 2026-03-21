@@ -43,7 +43,7 @@ const Contact = () => {
         <form
           ref={form}
           onSubmit={handelSubmit}
-          className="w-[95%] max-w-[600px] flex flex-col bg-[rgba(17,25,40,0.83)] border border-[rgba(255,255,255,0.125)] p-[32px] rounded-[16px] shadow-[0_4px_24px_rgba(23,92,230,0.15)] mt-[28px] gap-[12px] backdrop-blur-[10px] bg-gradient-to-br from-[rgba(23,92,230,0.05)] to-transparent relative overflow-hidden ring-1 ring-white/10 hover:ring-primary/50 transition-all duration-500"
+        className="w-[95%] max-w-[600px] flex flex-col bg-[rgba(17,25,40,0.83)] border border-[rgba(255,255,255,0.125)] p-[32px] rounded-[16px] shadow-[0_4px_24px_rgba(129,140,248,0.15)] mt-[28px] gap-[12px] backdrop-blur-[10px] bg-gradient-to-br from-[rgba(129,140,248,0.05)] to-transparent relative overflow-hidden ring-1 ring-white/10 hover:ring-primary/50 transition-all duration-500"
         >
           <div className="text-[28px] mb-[6px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-primary">
             {text.title}
@@ -75,7 +75,7 @@ const Contact = () => {
           <input
             type="submit"
             value={text.send}
-            className="w-full text-center bg-gradient-to-r from-primary to-[#ff2400] py-[16px] px-[16px] mt-[8px] rounded-[12px] border-none text-white text-[18px] font-bold cursor-pointer transition-all duration-300 transform hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(133,76,230,0.6)]"
+            className="w-full text-center bg-gradient-to-r from-primary to-[#60a5fa] py-[16px] px-[16px] mt-[8px] rounded-[12px] border-none text-white text-[18px] font-bold cursor-pointer transition-all duration-300 transform hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(129,140,248,0.6)]"
           />
         </form>
       </div>

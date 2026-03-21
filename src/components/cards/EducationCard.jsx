@@ -20,7 +20,7 @@ const EducationCard = ({ education }) => {
         gap: "12px",
         background: "#1d1836",
         color: "#fff",
-        boxShadow: "rgba(23, 92, 230, 0.15) 0px 4px 24px",
+        boxShadow: "rgba(129, 140, 248, 0.15) 0px 4px 24px",
         backgroundColor: "rgba(17, 25, 40, 0.83)",
         border: "1px solid rgba(255, 255, 255, 0.125)",
         borderRadius: "6px",

@@ -13,7 +13,7 @@ const Projects = () => {
   return (
     <div
       id="Projects"
-      className="flex flex-col justify-center relative z-10 items-center bg-[linear-gradient(343.07deg,rgba(132,59,206,0.06)_5.71%,rgba(132,59,206,0)_64.83%)]"
+      className="flex flex-col justify-center relative z-10 items-center bg-[linear-gradient(343.07deg,rgba(129,140,248,0.06)_5.71%,rgba(129,140,248,0)_64.83%)]"
       style={{
         clipPath: "polygon(0 0, 100% 0, 100% 100%,100% 98%, 0 100%)",
       }}

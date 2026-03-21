@@ -26,74 +26,94 @@ const Hero = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // Roles can be an array — join with " & " for clean display
+  const rolesDisplay = Array.isArray(bioData.roles)
+    ? bioData.roles.join(" & ")
+    : bioData.roles;
+
   return (
-    <div id="About">
+    <div id="About" className="relative overflow-hidden">
+      {/* Background SVG — absolutely positioned, never affects layout */}
       <div
-        className="flex justify-center relative py-[80px] px-[30px] z-10 lg:py-[66px] lg:px-[16px] sm:py-[32px]"
+        className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden"
+        aria-hidden="true"
+        style={{ zIndex: 0 }}
+      >
+        <HeroBgAnimation />
+      </div>
+
+      {/* Hero content */}
+      <div
+        className="relative flex items-center justify-center py-20 px-4 sm:px-6 md:px-10 min-h-[calc(100vh-70px)]"
         style={{
           clipPath: "polygon(0 0, 100% 0, 100% 100%, 70% 95%, 0 100%)",
+          zIndex: 1,
         }}
       >
-        <div className="absolute flex justify-start inset-0 w-full h-full max-w-[1360px] overflow-hidden px-[30px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 lg:px-0">
-          <HeroBgAnimation />
-        </div>
-        <motion.div {...headContentAnimation}>
-          {isMobile ? (
-            <img
-              src={HeroImg}
-              alt="Hero"
-              className=" rounded-[90px] w-full h-full border-[2px] border-primary sm:max-w-[400px] sm:max-h-[400px]"
-            />
-          ) : (
-            <Tilt>
+        <motion.div
+          {...headContainerAnimation}
+          className="flex flex-col-reverse lg:flex-row items-center justify-between w-full max-w-[1100px] gap-10 lg:gap-12"
+        >
+          {/* Text content */}
+          <div className="flex flex-col items-center lg:items-start text-center lg:text-left w-full lg:w-1/2 order-2 lg:order-1">
+            <motion.div {...headTextAnimation} className="w-full">
+              {/* Greeting + Name */}
+              <h1 className="font-bold text-text_primary leading-tight mb-2 text-4xl sm:text-5xl md:text-[44px] lg:text-[56px] xl:text-[64px] break-words">
+                {heroText.hi}
+                <br />
+                {bioData.name}
+              </h1>
+
+              {/* Role line */}
+              <div className="font-semibold text-text_primary leading-snug mb-4 text-xl sm:text-2xl md:text-[22px] lg:text-[28px] break-words">
+                {heroText.iam}{" "}
+                <span className="text-primary cursor-pointer">
+                  {rolesDisplay}
+                </span>
+              </div>
+            </motion.div>
+
+            {/* Description */}
+            <motion.div {...headContentAnimation} className="w-full">
+              <p className="text-text_primary/90 leading-relaxed mb-8 text-base sm:text-[17px] md:text-[18px] break-words max-w-[90%] mx-auto lg:mx-0">
+                {bioData.description}
+              </p>
+            </motion.div>
+
+            {/* CTA Button */}
+            <motion.div {...headContentAnimation} className="w-full flex justify-center lg:justify-start">
+              <a
+                href={bioData.resume}
+                target="_blank"
+                rel="noreferrer"
+                className="appearance-none no-underline w-full sm:w-auto max-w-[300px] text-center px-8 py-4 text-white rounded-[50px] font-bold text-lg sm:text-xl bg-gradient-to-r from-[#818cf8] via-[#60a5fa] to-[#818cf8] bg-[length:200%_auto] shadow-[0_4px_14px_0_rgba(129,140,248,0.39)] hover:scale-105 hover:shadow-[0_6px_25px_rgba(129,140,248,0.5)] hover:bg-right transition-all duration-500 ease-in-out"
+              >
+                {heroText.checkResume}
+              </a>
+            </motion.div>
+          </div>
+
+          {/* Hero image */}
+          <motion.div
+            {...headContentAnimation}
+            className="flex justify-center items-center w-full lg:w-1/2 order-1 lg:order-2"
+          >
+            {isMobile ? (
               <img
                 src={HeroImg}
                 alt="Hero"
-                className="mt-16 rounded-[90px] w-auto h-auto border-[1px] border-primary sm:max-w-[400px] sm:max-h-[400px] object-cover"
+                className="rounded-[60px] w-[220px] h-[220px] sm:w-[280px] sm:h-[280px] object-cover border-[2px] border-primary"
               />
-            </Tilt>
-          )}
-        </motion.div>
-        <motion.div {...headContainerAnimation}>
-          <div className="relative flex items-center justify-between w-full max-w-[1100px] gap-12 lg:gap-8 md:flex-col-reverse">
-            <div className="w-full p-10 order-1 md:order-2 md:flex-col md:items-center">
-              <motion.div {...headTextAnimation}>
-                <div className="font-bold text-[50px] text-text_primary leading-[68px] lg:text-center lg:text-[40px] lg:leading-[48px] lg:mb-[8px] sm:text-[32px] sm:leading-[40px]">
-                  {heroText.hi} <br /> {bioData.name}
-                </div>
-                <div className="font-semibold text-[32px] gap-[12px] text-text_primary leading-[68px] lg:text-center lg:text-[22px] lg:leading-[48px] lg:mb-[16px]">
-                  {heroText.iam}
-                  <span className="cursor-pointer text-primary">
-                    {bioData.roles}
-                  </span>
-                </div>
-              </motion.div>
-
-              <motion.div {...headContentAnimation}>
-                <div className="text-[20px] mb-[42px] text-text_primary/95 lg:text-center lg:text-[16px]">
-                  {bioData.description}
-                </div>
-              </motion.div>
-
-              <motion.div
-                {...headContentAnimation}
-                className="flex lg:justify-center mt-4"
-              >
-                <a
-                  href={bioData.resume}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="appearance-none no-underline w-[95%] max-w-[300px] text-center p-[16px] text-white rounded-[50px] font-bold text-[20px] bg-gradient-to-r from-[#ff2450] via-[#ff2400] to-[#ff2450] bg-[length:200%_auto] shadow-[0_4px_14px_0_rgba(255,36,0,0.39)] hover:scale-105 hover:shadow-[0_6px_25px_rgba(255,36,0,0.5)] hover:bg-right transition-all duration-500 ease-in-out sm:py-[12px] sm:text-[18px] sm:max-w-[260px]"
-                >
-                  {heroText.checkResume}
-                </a>
-              </motion.div>
-            </div>
-
-            <div className="w-full order-2 flex justify-end lg:order-1 lg:flex-col lg:items-center lg:justify-center lg:mb-[80px] sm:mb-[30px]">
-
-            </div>
-          </div>
+            ) : (
+              <Tilt>
+                <img
+                  src={HeroImg}
+                  alt="Hero"
+                  className="rounded-[90px] w-[300px] h-[300px] lg:w-[360px] lg:h-[360px] object-cover border-[1px] border-primary"
+                />
+              </Tilt>
+            )}
+          </motion.div>
         </motion.div>
       </div>
     </div>
