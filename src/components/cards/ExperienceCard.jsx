@@ -37,8 +37,10 @@ const ExperienceCard = ({ experience }) => {
       <div className="w-full flex max-w-full gap-[12px]">
         <img
           src={experience?.img}
-          alt=""
-          className="h-[50px] rounded-[10px] mt-[4px] md:h-[40px]"
+          alt={experience?.company}
+          width="50"
+          height="50"
+          className="h-[50px] w-[50px] rounded-[10px] mt-[4px] md:h-[40px] md:w-[40px]"
           loading="lazy"
         />
         <div className="w-full flex flex-col">

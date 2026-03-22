@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { Link as LinkR } from "react-router-dom";
 import { Bio, navigation } from "../data/constants";
 import { useLanguage } from "../utils/LanguageContext";
@@ -107,6 +107,7 @@ const Navbar = () => {
               href={bioData.github}
               target="_blank"
               rel="noreferrer"
+              aria-label="View GitHub Profile"
               className="github-btn no-underline flex items-center gap-2 rounded-full px-5 py-2 text-[0.875rem] font-medium text-text_primary hover:text-white transition-all duration-250 ease-in-out hover:scale-[1.04]"
             >
               {/* GitHub icon */}
@@ -124,6 +125,7 @@ const Navbar = () => {
             {/* Language toggle pill */}
             <button
               onClick={toggleLanguage}
+              aria-label={`Switch Language to ${language === "mn" ? "English" : "Mongolian"}`}
               className="flex items-center gap-1.5 rounded-full px-4 py-2 text-[0.85rem] font-medium text-text_secondary hover:text-text_primary bg-white/[0.06] hover:bg-white/[0.1] border border-white/[0.08] hover:border-white/[0.18] transition-all duration-250 ease-in-out hover:scale-[1.04] outline-none"
             >
               <span>{language === "mn" ? "🇲🇳" : "🇺🇸"}</span>

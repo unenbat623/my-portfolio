@@ -1,29 +1,36 @@
-import React, { Suspense, lazy } from "react";
-import Navbar from "./components/Navbar";
-import { LanguageProvider } from "./utils/LanguageContext";
+import { Suspense, lazy } from "react";
 import { BrowserRouter } from "react-router-dom";
+import { LanguageProvider } from "./utils/LanguageContext";
+import Navbar from "./components/Navbar";
 import Hero from "./components/sections/Hero";
-import StartCanvas from "./components/canvas/Stars";
 
+// AGGRESSIVE CODE SPLITTING: Only Hero and Navbar load synchronously
+const StarCanvas = lazy(() => import("./components/canvas/Stars"));
 const Skills = lazy(() => import("./components/sections/Skills"));
+const Projects = lazy(() => import("./components/sections/Projects"));
 const Experience = lazy(() => import("./components/sections/Experience"));
 const Education = lazy(() => import("./components/sections/Education"));
-const Projects = lazy(() => import("./components/sections/Projects"));
 const Contact = lazy(() => import("./components/sections/Contact"));
 const Footer = lazy(() => import("./components/sections/Footer"));
-
 
 function App() {
   return (
     <LanguageProvider>
       <BrowserRouter>
-        <div className="bg-bg w-full overflow-x-hidden relative">
-          <StartCanvas />
+        <div className="bg-bg w-full overflow-x-hidden relative min-h-screen">
+          {/* Deferred Background Canvas */}
+          <Suspense fallback={null}>
+            <StarCanvas />
+          </Suspense>
+
           <Navbar />
 
-          <div>
+          <div className="flex flex-col gap-0 relative">
+            {/* LCP Section (Fixed: Immediate Paint) */}
             <Hero />
-            <Suspense fallback={<div className="text-white text-center py-10">Loading...</div>}>
+
+            {/* Below-the-fold Sections (Deferred Load) */}
+            <Suspense fallback={<div className="h-[600px] w-full bg-[#090917]" />}>
               <Skills />
               <Experience />
               <Projects />
