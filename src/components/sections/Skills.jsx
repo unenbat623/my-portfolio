@@ -20,7 +20,7 @@ const Skills = () => {
   return (
     <div
       id="Skills"
-      className="flex flex-col justify-center relative z-[1] items-center"
+      className="flex flex-col justify-center relative z-[1] items-center py-[50px] md:py-[80px]"
     >
       <div className="relative flex justify-between items-center flex-col w-full max-w-[1100px] gap-[12px]">
         <h2 className="text-[42px] text-center font-semibold mt-[20px] text-text_primary md:mt-[12px] md:text-[32px]">

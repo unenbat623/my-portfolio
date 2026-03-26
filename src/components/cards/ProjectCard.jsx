@@ -6,7 +6,7 @@ const ProjectCard = ({ project }) => {
   const { language } = useLanguage();
   const ui = uiText[language];
   return (
-    <div className="w-[330px] h-[490px] bg-card cursor-pointer rounded-[10px] shadow-[0_0_12px_4px_rgba(0,0,0,0.4)] overflow-hidden py-[26px] px-[20px] flex flex-col gap-[14px] transition-all duration-500 ease-in-out hover:-translate-y-[10px] hover:shadow-[0_0_50px_4px_rgba(0,0,0,0.6)] hover:brightness-110">
+    <div className="w-full max-w-[330px] h-auto min-h-[490px] bg-card cursor-pointer rounded-[10px] shadow-[0_0_12px_4px_rgba(0,0,0,0.4)] overflow-hidden py-[26px] px-[20px] flex flex-col gap-[14px] transition-all duration-500 ease-in-out hover:-translate-y-[10px] hover:shadow-[0_0_50px_4px_rgba(0,0,0,0.6)] hover:brightness-110">
       <img
         src={project.image}
         alt={project.title}

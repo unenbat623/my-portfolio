@@ -52,7 +52,7 @@ export const uiText = {
     all: "ALL",
     webApps: "WEB APPS",
     machineLearning: "MACHINE LEARNING",
-    viewWebApp: "View Web App",
+    viewWebApp: "Live Demo",
     skills: "Skills",
   },
   mn: {
@@ -139,6 +139,7 @@ export const staticText = {
     },
   },
 };
+
 export const experiencesMn = [
   {
     id: 0,
@@ -228,8 +229,7 @@ export const projectsMn = [
     date: "2024 оны 6 сар - 2024 оны 9 сар",
     description:
       "Загварын нарийвчлалыг сайжруулахын тулд өгөгдлийн багцыг урьдчилан боловсруулж, нэмэгдүүлсэн, загварыг сургасан, загвар болон Typescript ашиглан API үүсгэсэн, мөн төслийн frontend болон backend-д React вэб програмыг ашигласан. Амжилт: Эмнэлгийн зурагнаас тархины хавдрыг үнэн зөв илрүүлэх 95.7%-ийн нарийвчлалд хүрсэн.",
-    image:
-      "/img/djgeo.png",
+    image: "/img/djgeo.png",
     tags: ["typescript", "Graphql", "React"],
     category: "machine learning",
     webapp: "https://www.djgeo.mn/",
@@ -248,8 +248,7 @@ export const projectsMn = [
     date: "2024 оны 4 сар - 2024 оны 6 сар",
     description:
       "React JS, Headless UI болон Material UI ашиглан хийсэн Central Cinema вэбсайт. Хэрэглэгчид Google хаягаараа нэвтэрч болох нэвтрэх хуудастай. Бүх даалгаврыг харж, шинэ даалгавар үүсгэх боломжтой хажуугийн цэстэй. Responsive загвартай. Хэрэглэгчид тодорхой өдөр бүх даалгаврыг харах боломжтой хуанлитай.",
-    image:
-      "/img/cinema.png",
+    image: "/img/cinema.png",
     tags: ["React Js", "Typescript", "Node JS"],
     category: "web site, web app",
     webapp: "https://cinema-app-client-front.vercel.app/",
@@ -260,9 +259,8 @@ export const projectsMn = [
     date: "2024 оны 4 сар - 2024 оны 6 сар",
     description:
       "React JS болон Material UI ашиглан хийсэн Central cinema admin вэб програм. Хэрэглэгчид Google хаягаараа нэвтэрч болох нэвтрэх хуудастай. Бүх даалгаврыг харж, шинэ даалгавар үүсгэх боломжтой хажуугийн цэстэй. Хэрэглэгчид тодорхой өдөр бүх даалгаврыг харах боломжтой хуанлитай.",
-    image:
-      "/img/cinema_admin.png",
-    tags: ["React Js", "Typescript", "Node JS", ""],
+    image: "/img/cinema_admin.png",
+    tags: ["React Js", "Typescript", "Node JS"],
     category: "web site",
     webapp: "https://github.com/unenbat623/Todo-Web-App",
   },
@@ -272,47 +270,29 @@ export const projectsMn = [
     date: "2023 оны 9 сар - 2023 оны 10 сар",
     description:
       "React JS болон Material UI ашиглан хийсэн GELD вэб програм. Хэрэглэгчид Google хаягаараа нэвтэрч болох нэвтрэх хуудастай. Бүх даалгаврыг харж, шинэ даалгавар үүсгэх боломжтой хажуугийн цэстэй. Хэрэглэгчид тодорхой өдөр бүх даалгаврыг харах боломжтой хуанлитай.",
-    image:
-      "/img/blog.png",
-    tags: ["React Js", "Typescript", "Node JS", ""],
+    image: "/img/blog.png",
+    tags: ["React Js", "Typescript", "Node JS"],
     category: "web app",
     webapp: "https://team-blog-ten.vercel.app/",
   },
   {
-    id: 3,
-    title: "Blog web app",
-    date: "2023 оны 9 сар - 2023 оны 10 сар",
+    id: 4,
+    title: "Автомашин түрээсийн вэб аппликейшн",
+    date: "2025 оны 2 сар - 2025 оны 3 сар",
     description:
-      "React JS болон Material UI ашиглан хийсэн GELD вэб програм. Хэрэглэгчид Google хаягаараа нэвтэрч болох нэвтрэх хуудастай. Бүх даалгаврыг харж, шинэ даалгавар үүсгэх боломжтой хажуугийн цэстэй. Хэрэглэгчид тодорхой өдөр бүх даалгаврыг харах боломжтой хуанлитай.",
-    image:
-      "/img/blog.png",
-    tags: ["React Js", "Typescript", "Node JS", ""],
+      "Хэрэглэгчид машин үзэх, ангиллаар шүүх, захиалга өгөх боломжтой орчин үеийн машин түрээсийн вэб програм. Энэ нь респонсив UI, шүүлтүүрийн систем болон цэвэр UX-ийг багтаасан болно.",
+    image: "/img/car_rental.png",
+    tags: ["Next Js", "Typescript", "Tailwind CSS"],
     category: "web app",
-    webapp: "https://team-blog-ten.vercel.app/",
-  },
-  {
-    id: 3,
-    title: "Blog web app",
-    date: "2023 оны 9 сар - 2023 оны 10 сар",
-    description:
-      "React JS болон Material UI ашиглан хийсэн GELD вэб програм. Хэрэглэгчид Google хаягаараа нэвтэрч болох нэвтрэх хуудастай. Бүх даалгаврыг харж, шинэ даалгавар үүсгэх боломжтой хажуугийн цэстэй. Хэрэглэгчид тодорхой өдөр бүх даалгаврыг харах боломжтой хуанлитай.",
-    image:
-      "/img/blog.png",
-    tags: ["React Js", "Typescript", "Node JS", ""],
-    category: "web app",
-    webapp: "https://team-blog-ten.vercel.app/",
-  },
-  {
-    id: 3,
-    title: "Blog web app",
-    date: "2023 оны 9 сар - 2023 оны 10 сар",
-    description:
-      "React JS болон Material UI ашиглан хийсэн GELD вэб програм. Хэрэглэгчид Google хаягаараа нэвтэрч болох нэвтрэх хуудастай. Бүх даалгаврыг харж, шинэ даалгавар үүсгэх боломжтой хажуугийн цэстэй. Хэрэглэгчид тодорхой өдөр бүх даалгаврыг харах боломжтой хуанлитай.",
-    image:
-      "/img/blog.png",
-    tags: ["React Js", "Typescript", "Node JS", ""],
-    category: "web app",
-    webapp: "https://team-blog-ten.vercel.app/",
+    webapp: "https://car-rental-client-6khh.vercel.app/",
+    member: [
+      {
+        name: "Б. Үнэнбат",
+        img: "/img/unenbat.jpg",
+        linkedin: "https://www.linkedin.com/in/b-unenbat-7a4b7823b/",
+        github: "https://github.com/unenbat623/",
+      },
+    ],
   },
 ];
 
@@ -489,23 +469,43 @@ export const education = [
   },
 ];
 
+// ── English projects — all images use local /img/ paths ──
 export const projects = [
   {
-    id: 0,
-    title: "Graphql TODO",
-    date: "Jan 2024 - Mar 2024",
+    id: 5,
+    title: "Car Rental Web App",
+    date: "Feb 2025 - Mar 2025",
     description:
-      "Preprocessed and augmented the dataset to improve model accuracy, trained the model, created API using model and Typescript, and used React web app for the project's frontend and backend. Achievements: Achieved an accuracy of 95.7% to accurately detect brain tumors from medical images.",
-    image:
-      "https://github.com/unenbat623/Brain-Tumor-Detection/raw/main/Readme_resource/Image2.png",
-    tags: ["typescript", "Graphql", "React"],
-    category: "machine learning",
-    github: "https://github.com/unenbat623/",
-    webapp: "https://brain-tumor.netlify.app/",
+      "A modern car rental web application where users can browse cars, filter by categories, and make bookings. It includes responsive UI, filtering system, and clean UX.",
+    image: "/img/car_rental.png",
+    tags: ["Next Js", "Typescript", "Tailwind CSS"],
+    category: "web app",
+    github: "https://github.com/unenbat623/car-rental-client",
+    webapp: "https://car-rental-client-6khh.vercel.app/",
     member: [
       {
         name: "B.unenbat",
-        img: "https://scontent.fuln2-2.fna.fbcdn.net/v/t39.30808-6/415590667_333489336309354_4681630647101831769_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=5f2048&_nc_ohc=YGzvt1HiDOkQ7kNvgFQWPFC&_nc_ht=scontent.fuln2-2.fna&oh=00_AfDB0dNACIAQ4iNWmAXsu5on2Pt7ikFtW-1mgPUSVniRqw&oe=66412742",
+        img: "/img/unenbat.jpg",
+        linkedin: "https://www.linkedin.com/in/b-unenbat-7a4b7823b/",
+        github: "https://github.com/unenbat623/",
+      },
+    ],
+  },
+  {
+    id: 0,
+    title: "Djgeo.mn",
+    date: "Jun 2024 - Sep 2024",
+    description:
+      "Preprocessed and augmented the dataset to improve model accuracy, trained the model, created API using model and Typescript, and used React web app for the project's frontend and backend. Achievements: Achieved an accuracy of 95.7% to accurately detect brain tumors from medical images.",
+    image: "/img/djgeo.png",
+    tags: ["Typescript", "Graphql", "React"],
+    category: "machine learning",
+    github: "https://github.com/unenbat623/",
+    webapp: "https://www.djgeo.mn/",
+    member: [
+      {
+        name: "B.unenbat",
+        img: "/img/unenbat.jpg",
         linkedin: "https://www.linkedin.com/in/b-unenbat-7a4b7823b/",
         github: "https://github.com/unenbat623/",
       },
@@ -514,41 +514,37 @@ export const projects = [
   {
     id: 1,
     title: "Central Cinema website",
-    date: "Jun 2021",
+    date: "Apr 2024 - Jun 2024",
     description:
-      " A Central Cinema website made with React JS, Headless UI and Material UI. It has a login page where users can log in with their Google account. It has a sidebar where users can see all the tasks and can create a new task.Build responsive It has a calendar where users can see all the tasks on a particular date.",
-    image:
-      "https://camo.githubusercontent.com/84ac6ab6f378348ef28d8184062b7e9e3511a1252ae3966eaa49e8e998f732a7/68747470733a2f2f666972656261736573746f726167652e676f6f676c65617069732e636f6d2f76302f622f746f646f2d6170702d63386331392e61707073706f742e636f6d2f6f2f53637265656e73686f74253230283938292e706e673f616c743d6d6564696126746f6b656e3d33643335646366322d626666322d343730382d393031632d343232383866383332386633",
+      "A Central Cinema website made with React JS, Headless UI and Material UI. It has a login page where users can log in with their Google account. Responsive design with a sidebar and calendar view.",
+    image: "/img/cinema.png",
     tags: ["React Js", "Typescript", "Node JS"],
     category: "web site, web app",
     github: "https://github.com/unenbat623/Todo-Web-App",
-    webapp: "https://rishav-react-todo.netlify.app/",
+    webapp: "https://cinema-app-client-front.vercel.app/",
   },
   {
     id: 2,
-    title: "Food_Delvivery",
-    date: "Jun 2024-",
+    title: "Central Cinema Admin",
+    date: "Apr 2024 - Jun 2024",
     description:
-      " A Food_Delvivery Web App made with React JS, and Material UI. It has a login page where users can log in with their Google account. It has a sidebar where users can see all the tasks and can create a new task. It has a calendar where users can see all the tasks on a particular date.",
-    image:
-      "https://camo.githubusercontent.com/84ac6ab6f378348ef28d8184062b7e9e3511a1252ae3966eaa49e8e998f732a7/68747470733a2f2f666972656261736573746f726167652e676f6f676c65617069732e636f6d2f76302f622f746f646f2d6170702d63386331392e61707073706f742e636f6d2f6f2f53637265656e73686f74253230283938292e706e673f616c743d6d6564696126746f6b656e3d33643335646366322d626666322d343730382d393031632d343232383866383332386633",
-    tags: ["React Js", "Typescript", "Node JS", ""],
+      "A Central Cinema admin web app made with React JS and Material UI. Features login, sidebar task management, and a calendar view for daily task tracking.",
+    image: "/img/cinema_admin.png",
+    tags: ["React Js", "Typescript", "Node JS"],
     category: "web site",
     github: "https://github.com/unenbat623/Todo-Web-App",
-    webapp: "https://rishav-react-todo.netlify.app/",
+    webapp: "https://cinema-app-client-front.vercel.app/",
   },
-
   {
     id: 3,
-    title: "GELD",
-    date: "Jun 2024-",
+    title: "Blog Web App",
+    date: "Sep 2023 - Oct 2023",
     description:
-      " A GELD Web App made with React JS, and Material UI. It has a login page where users can log in with their Google account. It has a sidebar where users can see all the tasks and can create a new task. It has a calendar where users can see all the tasks on a particular date.",
-    image:
-      "https://camo.githubusercontent.com/84ac6ab6f378348ef28d8184062b7e9e3511a1252ae3966eaa49e8e998f732a7/68747470733a2f2f666972656261736573746f726167652e676f6f676c65617069732e636f6d2f76302f622f746f646f2d6170702d63386331392e61707073706f742e636f6d2f6f2f53637265656e73686f74253230283938292e706e673f616c743d6d6564696126746f6b656e3d33643335646366322d626666322d343730382d393031632d343232383866383332386633",
-    tags: ["React Js", "Typescript", "Node JS", ""],
+      "A Blog Web App made with React JS and Material UI. It has a login page where users can log in with their Google account, a sidebar for all posts, and a calendar for date-based filtering.",
+    image: "/img/blog.png",
+    tags: ["React Js", "Typescript", "Node JS"],
     category: "web app",
     github: "https://github.com/unenbat623/Todo-Web-App",
-    webapp: "https://rishav-react-todo.netlify.app/",
+    webapp: "https://team-blog-ten.vercel.app/",
   },
 ];

@@ -14,7 +14,7 @@ const Education = () => {
   return (
     <div
       id="Education"
-      className="flex flex-col justify-center relative z-10 items-center mt-[50px]"
+      className="flex flex-col justify-center relative z-10 items-center py-[50px] md:py-[80px]"
     >
       <div className="relative flex justify-between items-center flex-col w-full max-w-[1100px] gap-[12px]">
         <h2 className="text-[52px] text-center font-semibold mt-[20px] text-text_primary md:mt-[12px] md:text-[32px]">
@@ -29,7 +29,9 @@ const Education = () => {
             <EducationCard key={`education-${index}`} education={education} />
           ))}
         </VerticalTimeline>
-        <EarthCanvas />
+        <div className="w-full h-[400px] mt-10 md:h-[500px]">
+          <EarthCanvas />
+        </div>
       </div>
     </div>
   );

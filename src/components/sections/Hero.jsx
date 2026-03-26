@@ -45,7 +45,6 @@ const Hero = () => {
       <div
         className="relative flex items-center justify-center py-20 px-4 sm:px-6 md:px-10 min-h-[calc(100vh-70px)]"
         style={{
-          clipPath: "polygon(0 0, 100% 0, 100% 100%, 70% 95%, 0 100%)",
           zIndex: 1,
         }}
       >
