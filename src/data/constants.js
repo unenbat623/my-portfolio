@@ -294,6 +294,25 @@ export const projectsMn = [
       },
     ],
   },
+  {
+    id: 5,
+    title: "Zeel.mn",
+    date: "2024 оны 10 сар - 2024 оны 12 сар",
+    description: "Зээлийн удирдлагын систем. Хэрэглэгчдэд зээлийн мэдээлэл болон төлөлтийн хуваарийг хянах боломжийг олгоно.",
+    image: "/zeel.jpg",
+    tags: ["React Js", "Typescript", "Node JS", "PostgreSQL"],
+    category: "web app",
+    webapp: "https://zeel.mn/",
+  },
+  {
+    id: 6,
+    title: "Taki App",
+    date: "2024 оны 11 сар - Одоо",
+    description: "Хөгжмийн болон энтертайнмент төрлийн вэб аппликейшн.",
+    image: "/taki.jpeg",
+    tags: ["React Js", "Tailwind CSS", "Framer Motion"],
+    category: "web app",
+  }
 ];
 
 export const skills = [
@@ -547,4 +566,23 @@ export const projects = [
     github: "https://github.com/unenbat623/Todo-Web-App",
     webapp: "https://team-blog-ten.vercel.app/",
   },
+  {
+    id: 6,
+    title: "Zeel.mn",
+    date: "Oct 2024 - Dec 2024",
+    description: "A loan management system that allows users to track loan information and payment schedules.",
+    image: "/zeel.jpg",
+    tags: ["React Js", "Typescript", "Node JS", "PostgreSQL"],
+    category: "web app",
+    webapp: "https://zeel.mn/",
+  },
+  {
+    id: 7,
+    title: "Taki App",
+    date: "Nov 2024 - Present",
+    description: "A music and entertainment web application built for seamless user interaction.",
+    image: "/taki.jpeg",
+    tags: ["React Js", "Tailwind CSS", "Framer Motion"],
+    category: "web app",
+  }
 ];
