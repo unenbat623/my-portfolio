@@ -5,19 +5,31 @@ import { uiText } from "../../data/constants";
 const ProjectCard = ({ project }) => {
   const { language } = useLanguage();
   const ui = uiText[language];
+  const hasLiveDemo = Boolean(project.webapp);
+  const hasGithub = Boolean(project.github);
+
   return (
-    <div className="w-full max-w-[330px] h-auto min-h-[490px] bg-card cursor-pointer rounded-[10px] shadow-[0_0_12px_4px_rgba(0,0,0,0.4)] overflow-hidden py-[26px] px-[20px] flex flex-col gap-[14px] transition-all duration-500 ease-in-out hover:-translate-y-[10px] hover:shadow-[0_0_50px_4px_rgba(0,0,0,0.6)] hover:brightness-110">
+    <article className="w-full max-w-[330px] min-h-[530px] bg-card rounded-[8px] shadow-[0_0_12px_4px_rgba(0,0,0,0.4)] overflow-hidden py-[22px] px-[18px] flex flex-col gap-[14px] transition-all duration-500 ease-in-out hover:-translate-y-[8px] hover:shadow-[0_0_42px_4px_rgba(0,0,0,0.55)] hover:brightness-110">
       <img
-        src={project.image}
+        src={project.image || "/untitled_design.png"}
         alt={project.title}
         width="330"
         height="180"
         className="w-full h-[180px] bg-white rounded-[10px] shadow-[0_0_16px_2px_rgba(0,0,0,0.3)] object-cover"
         loading="lazy"
       />
-      <div className="w-full flex items-center flex-wrap gap-[8px] mt-[4px]">
-        {/* Tags could go here if needed */}
-      </div>
+      {project.tags?.length > 0 && (
+        <div className="w-full flex items-center flex-wrap gap-[8px] mt-[2px]">
+          {project.tags.slice(0, 4).map((tag) => (
+            <span
+              key={tag}
+              className="text-[11px] leading-none text-primary bg-primary/10 border border-primary/20 rounded-[999px] px-[9px] py-[6px]"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+      )}
       <div className="w-full flex flex-col gap-0 px-[2px]">
         <div className="text-[20px] font-semibold text-text_secondary overflow-hidden line-clamp-2 text-overflow-ellipsis">
           {project.title}
@@ -29,7 +41,7 @@ const ProjectCard = ({ project }) => {
           {project.description}
         </div>
       </div>
-      <div className="flex items-center pl-[10px]">
+      <div className="flex items-center pl-[10px] min-h-[38px]">
         {project.member?.map((member, index) => (
           <img
             key={index}
@@ -40,17 +52,33 @@ const ProjectCard = ({ project }) => {
           />
         ))}
       </div>
-      <div className="flex gap-[12px] mt-[10px]">
-        <a
-          href={project.webapp}
-          target="_blank"
-          rel="noreferrer"
-          className="w-full text-center py-[10px] bg-card text-text_primary rounded-[8px] font-semibold text-[16px] border border-primary transition-all duration-500 hover:bg-primary hover:text-white"
-        >
-          {ui.viewWebApp}
-        </a>
+      <div className="flex gap-[10px] mt-auto">
+        {hasGithub && (
+          <a
+            href={project.github}
+            target="_blank"
+            rel="noreferrer"
+            className="w-full text-center py-[10px] bg-transparent text-text_primary rounded-[8px] font-semibold text-[14px] border border-white/20 transition-all duration-300 hover:border-primary hover:text-primary"
+          >
+            {ui.viewGithub}
+          </a>
+        )}
+        {hasLiveDemo ? (
+          <a
+            href={project.webapp}
+            target="_blank"
+            rel="noreferrer"
+            className="w-full text-center py-[10px] bg-card text-text_primary rounded-[8px] font-semibold text-[14px] border border-primary transition-all duration-300 hover:bg-primary hover:text-white"
+          >
+            {ui.viewWebApp}
+          </a>
+        ) : (
+          <span className="w-full text-center py-[10px] bg-white/5 text-text_secondary rounded-[8px] font-semibold text-[14px] border border-white/10">
+            {ui.unavailable}
+          </span>
+        )}
       </div>
-    </div>
+    </article>
   );
 };
 

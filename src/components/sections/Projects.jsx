@@ -9,6 +9,14 @@ const Projects = () => {
   const text = staticText[language].projects;
   const ui = uiText[language];
   const projectData = language === "mn" ? projectsMn : projects;
+  const visibleProjects =
+    toggle === "all"
+      ? projectData
+      : projectData.filter((item) =>
+          Array.isArray(item.category)
+            ? item.category.includes(toggle)
+            : item.category?.split(",").map((category) => category.trim()).includes(toggle)
+        );
 
   return (
     <div
@@ -50,15 +58,9 @@ const Projects = () => {
         </div>
 
         <div className="flex justify-center items-center gap-[28px] flex-wrap">
-          {toggle === "all" &&
-            projectData.map((project, index) => (
-              <ProjectCard key={`${language}-${project.id ?? index}`} project={project} />
-            ))}
-          {projectData
-            .filter((item) => item.category === toggle)
-            .map((project, index) => (
-              <ProjectCard key={`${language}-filtered-${project.id ?? index}`} project={project} />
-            ))}
+          {visibleProjects.map((project, index) => (
+            <ProjectCard key={`${language}-${toggle}-${project.id ?? index}`} project={project} />
+          ))}
         </div>
       </div>
     </div>

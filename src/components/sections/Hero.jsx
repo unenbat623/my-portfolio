@@ -100,7 +100,7 @@ const Hero = () => {
               <img
                 src="/img/HeroImage.jpg"
                 alt="B Unenbat"
-                fetchpriority="high"
+                fetchPriority="high"
                 loading="eager"
                 decoding="async"
                 className="rounded-[60px] w-[220px] h-[220px] sm:w-[280px] sm:h-[280px] object-cover border-[2px] border-primary"
@@ -110,7 +110,7 @@ const Hero = () => {
                 <img
                   src="/img/HeroImage.jpg"
                   alt="B Unenbat"
-                  fetchpriority="high"
+                  fetchPriority="high"
                   loading="eager"
                   decoding="async"
                   className="rounded-[90px] w-[300px] h-[300px] lg:w-[360px] lg:h-[360px] object-cover border-[1px] border-primary"

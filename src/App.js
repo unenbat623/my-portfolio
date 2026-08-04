@@ -1,5 +1,4 @@
 import { Suspense, lazy } from "react";
-import { BrowserRouter } from "react-router-dom";
 import { LanguageProvider } from "./utils/LanguageContext";
 import Navbar from "./components/Navbar";
 import Hero from "./components/sections/Hero";
@@ -16,31 +15,29 @@ const Footer = lazy(() => import("./components/sections/Footer"));
 function App() {
   return (
     <LanguageProvider>
-      <BrowserRouter>
-        <div className="bg-bg w-full overflow-x-hidden relative min-h-screen">
-          {/* Deferred Background Canvas */}
-          <Suspense fallback={null}>
-            <StarCanvas />
+      <div className="bg-bg w-full overflow-x-hidden relative min-h-screen">
+        {/* Deferred Background Canvas */}
+        <Suspense fallback={null}>
+          <StarCanvas />
+        </Suspense>
+
+        <Navbar />
+
+        <div className="flex flex-col gap-0 relative">
+          {/* LCP Section (Fixed: Immediate Paint) */}
+          <Hero />
+
+          {/* Below-the-fold Sections (Deferred Load) */}
+          <Suspense fallback={<div className="h-[600px] w-full bg-[#090917]" />}>
+            <Skills />
+            <Experience />
+            <Projects />
+            <Education />
+            <Contact />
+            <Footer />
           </Suspense>
-
-          <Navbar />
-
-          <div className="flex flex-col gap-0 relative">
-            {/* LCP Section (Fixed: Immediate Paint) */}
-            <Hero />
-
-            {/* Below-the-fold Sections (Deferred Load) */}
-            <Suspense fallback={<div className="h-[600px] w-full bg-[#090917]" />}>
-              <Skills />
-              <Experience />
-              <Projects />
-              <Education />
-              <Contact />
-              <Footer />
-            </Suspense>
-          </div>
         </div>
-      </BrowserRouter>
+      </div>
     </LanguageProvider>
   );
 }

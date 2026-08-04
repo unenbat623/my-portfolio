@@ -1,7 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import { VerticalTimelineElement } from "react-vertical-timeline-component";
 import { useLanguage } from "../../utils/LanguageContext";
 import { uiText } from "../../data/constants";
+
+const CompanyLogo = ({ src, name, className = "", compact = false }) => {
+  const [failed, setFailed] = useState(false);
+  const initials = name
+    ?.split(" ")
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((word) => word[0])
+    .join("")
+    .toUpperCase();
+
+  if (!src || failed) {
+    return (
+      <div
+        className={`flex items-center justify-center bg-[#111827] text-white font-bold ${className}`}
+        aria-label={name}
+      >
+        <span className={compact ? "text-[14px]" : "text-[16px]"}>{initials || "•"}</span>
+      </div>
+    );
+  }
+
+  return (
+    <img
+      src={src}
+      alt=""
+      className={`bg-white object-contain ${className}`}
+      loading="lazy"
+      onError={() => setFailed(true)}
+    />
+  );
+};
 
 const ExperienceCard = ({ experience }) => {
   const { language } = useLanguage();
@@ -9,15 +41,17 @@ const ExperienceCard = ({ experience }) => {
   return (
     <VerticalTimelineElement
       icon={
-        <img
-          width="100%"
-          height="100%"
-          alt={experience?.company}
-          style={{ borderRadius: "50%", objectFit: "cover" }}
+        <CompanyLogo
           src={experience?.img}
-          loading="lazy"
+          name={experience?.company}
+          compact
+          className="w-full h-full rounded-full p-[8px]"
         />
       }
+      iconStyle={{
+        background: "#ffffff",
+        boxShadow: "0 0 0 4px #ffffff, 0 0 24px rgba(129, 140, 248, 0.35)",
+      }}
       contentStyle={{
         display: "flex",
         flexDirection: "column",
@@ -35,13 +69,10 @@ const ExperienceCard = ({ experience }) => {
       date={experience?.date}
     >
       <div className="w-full flex max-w-full gap-[12px]">
-        <img
+        <CompanyLogo
           src={experience?.img}
-          alt={experience?.company}
-          width="50"
-          height="50"
-          className="h-[50px] w-[50px] rounded-[10px] mt-[4px] md:h-[40px] md:w-[40px]"
-          loading="lazy"
+          name={experience?.company}
+          className="h-[52px] w-[52px] shrink-0 rounded-[10px] mt-[4px] p-[6px] md:h-[42px] md:w-[42px]"
         />
         <div className="w-full flex flex-col">
           <div className="text-[18px] font-semibold text-text_primary/99 md:text-[14px]">

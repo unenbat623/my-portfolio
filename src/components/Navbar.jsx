@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Link as LinkR } from "react-router-dom";
 import { Bio, navigation } from "../data/constants";
 import { useLanguage } from "../utils/LanguageContext";
 
@@ -77,8 +76,8 @@ const Navbar = () => {
         <div className="w-full max-w-[1200px] mx-auto px-5 sm:px-8 flex items-center justify-between">
 
           {/* Logo */}
-          <LinkR
-            to="/"
+          <a
+            href="#About"
             className="no-underline flex items-center gap-2 group"
           >
             {/* Accent dot */}
@@ -89,7 +88,7 @@ const Navbar = () => {
             >
               My Portfolio
             </span>
-          </LinkR>
+          </a>
 
           {/* Desktop nav links */}
           <ul className="hidden md:flex items-center gap-8 list-none m-0 p-0">

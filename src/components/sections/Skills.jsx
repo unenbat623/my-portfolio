@@ -47,6 +47,9 @@ const Skills = () => {
                         alt=""
                         className="w-[24px] h-[24px]"
                         src={item.image}
+                        onError={(event) => {
+                          event.currentTarget.style.display = "none";
+                        }}
                       />
                       {item.name}
                     </div>
